@@ -4,6 +4,7 @@
 #### brainCloud BaaS
 This is the product I worked on, in particular the Client API for the features/service offered. Refer to Showcase > Demos to see and play the live demo games I helped build, maintain and deploy. Refer to Showcase > Games to see some of the client products that use brainCloud.
 https://getbraincloud.com/
+![brainCloud features](braincloud-features.png)
 #### brainCloud API Source Code
 All of my public source code and a history of my contributions, in particular I owned C++ and Objective-C (Swift) libraries and examples and worked extensively on the Unreal Engine library and examples as well. I performed code reviews and quick fixes for all supported platforms/languages.
 https://github.com/getbraincloud
