@@ -4,8 +4,8 @@
 bitHeads Inc.
 2022 - 2024
 
-* Created and directly supported cross-platform client API for BaaS to add gamification and multiplayer
-* Engineered and maintained CI/CD pipeline
+* Maintained, updated and supported cross-platform client API for BaaS to add gamification and multiplayer
+* Engineered and maintained CI/CD and TDD pipeline
 * Responded to customer issues and feature requests
 
 ```Unreal Engine, C++, Objective-C / Swift, Android Native, PlayStation, Node.js, Groovy, C# (Unity, Godot), Shell Script```
@@ -21,7 +21,7 @@ Silicon Hanna Inc.
 Fekete Associates Inc. (S&P Global)
 2008 - 2011
 
-* Developed tools using mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. 
+* Developed tools using mathematical modelling to maximize production and improve efficiency for major oil & gas corporations
 * Led research on a new system to reduce build times by 40%
 
 ```C++, MFC```
@@ -29,17 +29,19 @@ Fekete Associates Inc. (S&P Global)
 BJ Pipeline Inspection Services Inc. (Baker Hughes)
 2005 - 2008
 
-* Visualised PIG data with OpenGL graphics in-house software
+* Visualised in-line device data with OpenGL graphics
+* Implemented neural network algorithms for anomaly detection
 * Led development of custom web-based GIS reporting software 
-* Secured safe transmission of oil & gas preventing accidental leaks and spills by early detection
+* Improved low-level programming algorithms for data processing
 
 ```C++, C, OpenGL, PHP, SQL, Neural Networks```
-### Self-employed / Contractor
+### Self-employed / Contractor / Educator
 SuRJE Software Solutions Inc.
 2005 - 2008
 
 * Created and published physics-based games for iOS
 * Performed contract work for various clients in Calgary
+* Developed course curriculum and instructed C++ programming
 
 ```Objective-C, C#, PHP, Javascript, OpenGL, Chipmunk```
 ### Software Researcher / Lead Developer
@@ -48,14 +50,14 @@ PlayStarMusic Corp.
 
 * Lead developer and system administrator an iTunes like music store 
 * Automated DRM encoding and video streaming
-* Developed a prototype for a Google like search engine 
+* Developed a prototype for a Google competetive search engine 
 
 ```C++, PHP, Javascript``` 
 ### Junior Software Engineer
 Codefast.com
 2004 - 2005
 
-* Ported applications to a new GUI library 
+* Ported applications to operate under a new GUI library 
 * Developed user interfaces for software lifecycle automation
 
 ```C++, Shell script```
