@@ -10,14 +10,16 @@ This is the product I worked on, in particular the Client API for the features/s
 | ---: | :--- |
 | ![brainCloud features](braincloud-features.png) | ![brainCloud demos](braincloud-demos.png) |
 
-#### brainCloud API Source Code
+#### brainCloud API Source Code https://github.com/getbraincloud
 
 All of my public source code and a history of my contributions, in particular I owned C++ and Objective-C (Swift) libraries and examples and worked extensively on the Unreal Engine library and examples as well. I performed code reviews and quick fixes for all supported platforms/languages.
-https://github.com/getbraincloud
 
-#### jo-codegirl - Overview
+![brainCloud github](braincloud-github.png)
+
+#### jo-codegirl - Overview https://github.com/jo-codegirl
 My GitHub user profile while working on brainCloud.
-https://github.com/jo-codegirl
+
+![brainCloud jo-codegirl](braincloud-jo-codegirl.png)
 
 ## Silicon Hanna Inc. - Co-founder / Lead Developer
 ### Silicon Hanna - YouTube
