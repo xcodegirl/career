@@ -3,9 +3,8 @@
 ## Work Samples
 
 ### bitHeads, Inc. - Senior Software Developer
-#### brainCloud BaaS
+#### brainCloud BaaS https://getbraincloud.com/
 This is the product I worked on, in particular the Client API for the features/service offered. Refer to Showcase > Demos to see and play the live demo games I helped build, maintain and deploy. Refer to Showcase > Games to see some of the client products that use brainCloud.
-https://getbraincloud.com/
 
 | Features | Demos |
 | ---: | :--- |
