@@ -32,8 +32,8 @@ https://prism.ucalgary.ca/handle/1880/41881
 ### The application of artificial intelligence to transportation system design
 Co-authored publication in XRDS: Crossroads, The ACM Magazine for Students.
 https://dl.acm.org/doi/10.1145/904073.904076
-(PDF) Bacterial Chemotaxis in Silico
-### Co-authored conference article, recipient of Best Student Paper award.
+### (PDF) Bacterial Chemotaxis in Silico
+Co-authored conference article, recipient of Best Student Paper award.
 https://www.researchgate.net/publication/236577761_Bacterial_Chemotaxis_in_Silico
 ### Swarm-based Traffic Simulation with Evolutionary Traffic Light Adaptation
 Co-authored undergraduate publication.
