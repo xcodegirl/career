@@ -1,6 +1,6 @@
 # xcodegirl
 
-I'm Jo Haor. Welcome to my GitHub profile, where I am sharing about my career and work experience.
+I'm Jo Hoar. Welcome to my GitHub profile, where I am sharing about my career and work experience.
 
 ## About Me
 
