@@ -9,3 +9,11 @@ Canadian software developer with 20 years of experience in video game programmin
 [Work Samples](xcodegirl-work-samples.md)
 
 [Resume](xcodegirl-resume.md)
+
+xcodegirl on GitHub https://github.com/xcodegirl
+
+linuxcodegirl on You Tube https://www.youtube.com/@linuxcodegirl
+
+jo.codegirl on Epic Games https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65
+
+joanne-hoar on Linked In https://www.linkedin.com/in/joanne-hoar/
