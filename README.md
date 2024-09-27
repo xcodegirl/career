@@ -16,7 +16,7 @@ xcodegirl on GitHub https://github.com/xcodegirl
 
 joanne-hoar on Linked In https://www.linkedin.com/in/joanne-hoar/
 
-linuxcodegirl on You Tube https://www.youtube.com/@linuxcodegirl
+linuxcodegirl on You Tube https://www.youtube.com/@linuxcodegirl/playlists
 
 jo.codegirl on Epic Games https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65
 
