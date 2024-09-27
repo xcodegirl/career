@@ -5,6 +5,7 @@ bitHeads Inc.
 2022 - 2024
 
 * Maintained, updated and supported cross-platform client API for BaaS to add gamification and multiplayer
+* Developed and released demo games and projects 
 * Engineered and maintained CI/CD and TDD pipeline
 * Responded to customer issues and feature requests
 
