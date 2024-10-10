@@ -1,4 +1,10 @@
 # Joanne K. Hoar
+
+## Education
+Master of Science Degree in Computer Science, University of Calgary
+
+Bachelor of Science Degree in Computer Science, University of Calgary
+
 ## Career
 ### Senior Software Developer
 bitHeads Inc.
@@ -10,7 +16,7 @@ bitHeads Inc.
 * Responded to customer issues and feature requests
 
 ```Unreal Engine, C++, Objective-C / Swift, Android Native, PlayStation, Node.js, Groovy, C# (Unity, Godot), Shell Script```
-### Co-founder/ Game Designer
+### Co-founder/ Lead Developer
 Silicon Hanna Inc.
 2011 - 2022
 
@@ -72,7 +78,3 @@ VLab Computer Graphics Group / Artificial Intelligence Research Hub
 
 ```C++, OpenGL, Solaris, PHP, MySQL```
 
-## Education
-Master of Science Degree in Computer Science, University of Calgary
-
-Bachelor of Science Degree in Computer Science, University of Calgary
