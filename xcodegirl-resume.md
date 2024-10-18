@@ -21,7 +21,7 @@ Silicon Hanna Inc.
 2011 - 2022
 
 * Designed, coded and published nine games to commercial app stores for mobile devices
-* Experimented with cutting edge device tech and SDKs
+* Experimented with latest device tech and SDKs
 
 ```Unreal Engine, Objective-C / Swift, Android Native, Augmented Reality```
 ### Tools Programmer
