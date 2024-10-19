@@ -59,5 +59,25 @@ Co-authored conference article, recipient of Best Student Paper award.
 
 ![jo thesis](screenshots/jo-bacteria.png)
 
+## Awards
+* Departmental Nomination: Governor General's Gold Medal, Faculty of Graduate Studies, 2005
+* Postgraduate Scholarship NSERC D3, Natural Sciences and Engineering Research Council of Canada, 2005
+* Graduate Student Scholarship, Alberta Learning, 2004
+* Best Student Paper Award, ACAL 2003
+* CPSC Departmental Research Award, University of Calgary, 2003
 
-
+## Community Outreach
+* Vice President and Star Skate Coordinator, Hanna Figure Skating Club, present
+* Costume Coordinator, Stage Hanna Junior, 2024
+* Women of bitHeads and Cookbook Committee Member, bitHeads, 2024 
+* Team Manager/Assistant Coach, U11 Soccer, 2024
+* Dryland Training Coordinator, Hanna Figure Skating Club, 2022 - 2024
+* 4-H Public Speaking Judge, District Level Competition, 2022
+* Computer Programming for Kids, J.C. Charyk School, 2019 - 2021
+* Reading Program, Our Lady of Fatima School, 2016 - 2018
+* Preschool Gym Leader, YMCA,  2013 - 2014
+* OpenGL Elective Instructor, Fekete Associates, 2010
+* Ladies Luncheon Club and Golf Tournament Coordinator, BJ Pipeline Inspection Services, 2006 - 2008 
+* SCIberMENTOR Correspondant / Mentor, 2002 - 2005
+* President, Computer Science Graduate Society, 2002 - 2003
+* VP Academic, Computer Science Undergraduate Society, 2001 - 2001
