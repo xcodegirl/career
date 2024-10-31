@@ -67,7 +67,7 @@ Co-authored conference article, recipient of Best Student Paper award.
 * CPSC Departmental Research Award, University of Calgary, 2003
 
 ## Community Outreach
-* Vice President and Star Skate Coordinator, Hanna Figure Skating Club, present
+* Vice President, Hanna Figure Skating Club, present
 * Costume Coordinator, Stage Hanna Junior, 2024
 * Women of bitHeads and Cookbook Committee Member, bitHeads, 2024 
 * Team Manager/Assistant Coach, U11 Soccer, 2024
