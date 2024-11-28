@@ -50,7 +50,7 @@ SuRJE Software Solutions Inc.
 * Performed contract work for various clients in Calgary
 * Developed course curriculum and instructed C++ programming
 
-```Objective-C, C#, PHP, Javascript, OpenGL, Chipmunk```
+```Objective-C, C#, PHP, Javascript, OpenGL, Chipmunk, Linux, MySQL```
 ### Software Researcher / Lead Developer
 PlayStarMusic Corp.
 2005 - 2006
@@ -59,7 +59,7 @@ PlayStarMusic Corp.
 * Automated DRM encoding and video streaming
 * Developed a prototype for a Google competetive search engine 
 
-```C++, PHP, Javascript``` 
+```C++, PHP, Javascript, NET``` 
 ### Junior Software Engineer
 Codefast.com
 2004 - 2005
@@ -67,7 +67,7 @@ Codefast.com
 * Ported applications to operate under a new GUI library 
 * Developed user interfaces for software lifecycle automation
 
-```C++, Shell script```
+```C++, Shell script, Qt```
 ### Research Assistant
 VLab Computer Graphics Group / Artificial Intelligence Research Hub
 2001 - 2004
