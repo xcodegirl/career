@@ -1,20 +1,27 @@
 # Joanne K. Hoar
+
+## Education
+Master of Science Degree in Computer Science, University of Calgary
+
+Bachelor of Science Degree in Computer Science, University of Calgary
+
 ## Career
 ### Senior Software Developer
 bitHeads Inc.
 2022 - 2024
 
 * Maintained, updated and supported cross-platform client API for BaaS to add gamification and multiplayer
+* Developed and released demo games and projects 
 * Engineered and maintained CI/CD and TDD pipeline
 * Responded to customer issues and feature requests
 
 ```Unreal Engine, C++, Objective-C / Swift, Android Native, PlayStation, Node.js, Groovy, C# (Unity, Godot), Shell Script```
-### Co-founder/ Game Designer
+### Co-founder/ Lead Developer
 Silicon Hanna Inc.
 2011 - 2022
 
 * Designed, coded and published nine games to commercial app stores for mobile devices
-* Experimented with cutting edge device tech and SDKs
+* Experimented with latest device tech and SDKs
 
 ```Unreal Engine, Objective-C / Swift, Android Native, Augmented Reality```
 ### Tools Programmer
@@ -43,7 +50,7 @@ SuRJE Software Solutions Inc.
 * Performed contract work for various clients in Calgary
 * Developed course curriculum and instructed C++ programming
 
-```Objective-C, C#, PHP, Javascript, OpenGL, Chipmunk```
+```Objective-C, C#, PHP, Javascript, OpenGL, Chipmunk, Linux, MySQL```
 ### Software Researcher / Lead Developer
 PlayStarMusic Corp.
 2005 - 2006
@@ -52,7 +59,7 @@ PlayStarMusic Corp.
 * Automated DRM encoding and video streaming
 * Developed a prototype for a Google competetive search engine 
 
-```C++, PHP, Javascript``` 
+```C++, PHP, Javascript, NET``` 
 ### Junior Software Engineer
 Codefast.com
 2004 - 2005
@@ -60,7 +67,7 @@ Codefast.com
 * Ported applications to operate under a new GUI library 
 * Developed user interfaces for software lifecycle automation
 
-```C++, Shell script```
+```C++, Shell script, Qt```
 ### Research Assistant
 VLab Computer Graphics Group / Artificial Intelligence Research Hub
 2001 - 2004
@@ -71,7 +78,3 @@ VLab Computer Graphics Group / Artificial Intelligence Research Hub
 
 ```C++, OpenGL, Solaris, PHP, MySQL```
 
-## Education
-Master of Science Degree in Computer Science, University of Calgary
-
-Bachelor of Science Degree in Computer Science, University of Calgary
