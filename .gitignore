@@ -3,3 +3,6 @@ vcpkg_installed/
 out/
 build/
 .vs/
+**/privatecontact**.tex
+**/*.aux
+**/*.log
