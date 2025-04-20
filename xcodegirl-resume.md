@@ -8,7 +8,7 @@ Bachelor of Science Degree in Computer Science, University of Calgary
 ## Career
 ### Senior Software Developer
 bitHeads Inc.
-2022 - 2024
+2022 - 2025
 
 * Maintained, updated and supported cross-platform client API for BaaS to add gamification and multiplayer
 * Developed and released demo games and projects 
