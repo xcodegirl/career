@@ -6,3 +6,7 @@ build/
 **/privatecontact**.tex
 **/*.aux
 **/*.log
+
+latex/*.out
+latex/*.synctex.gz
+latex/*.pdf
