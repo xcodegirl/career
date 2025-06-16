@@ -9,5 +9,8 @@ build/
 
 **/*.out
 **/*.synctex.gz
-latex/*.pdf
+latex/*-resume.pdf
+latex/*-resume.md
+latex/*-resume.html
+latex/*-resume.tex
 
