@@ -1,0 +1,48 @@
+{
+  "name": "Alex Example",
+  "title": "Full Stack Developer",
+  "contact": {
+    "location": "Example City, Wonderland",
+    "email": "alex@example.com",
+    "linkedin": "https://linkedin.com/in/alex-example/",
+    "github": "https://github.com/exampledev"
+  },
+  "summary": "Creative developer with 10 years of experience in web and cloud technologies. Enjoys building scalable applications and mentoring junior engineers.",
+  "experience": [
+    {
+      "date": "2022 -- present",
+      "title": "Lead Developer",
+      "company": "ExampleSoft",
+      "description": "Leading a team of 8 developers to deliver SaaS products for global clients. Architected microservices and CI/CD pipelines.",
+      "technologies": [
+        "Python",
+        "Django",
+        "React",
+        "AWS",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "date": "2017 -- 2022",
+      "title": "Software Engineer",
+      "company": "Webify Inc.",
+      "description": "Developed REST APIs and modern web apps. Automated testing and deployment.",
+      "technologies": [
+        "Node.js",
+        "Express",
+        "Vue.js",
+        "MongoDB",
+        "Jenkins"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "date": "2013 -- 2017",
+      "degree": "BSc Computer Science",
+      "institution": "Wonderland University",
+      "field": "Computer Science"
+    }
+  ]
+}
