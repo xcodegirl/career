@@ -4,7 +4,7 @@ I'm Jo Hoar. Welcome to my GitHub profile, where I am sharing about my career an
 
 ## About Me
 
-Canadian software developer with 20 years of experience in video game programming, scientific modelling and cross-platform development. Proven track record in leading teams, mentoring developers, impressing customers and building corporate culture. Strong background in C++, Unreal Engine, iOS and Android. Passion for algorithmic correctness, mathematics and artificial intelligence.
+I'm a software developer and online instructor.
 
 ## Connect
 [xcodegirl on GitHub](https://github.com/xcodegirl)
