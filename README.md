@@ -15,7 +15,7 @@ Canadian software developer with 20 years of experience in video game programmin
 
 [jo.codegirl on Discord](https://discordapp.com/users/jo.codegirl)
 
-jo.codegirl on Epic Games https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65
+[jo.codegirl on Epic Games](https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65)
 
 joanne.hoar on Google
 
