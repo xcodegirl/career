@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+    background: #f9f9f9;
+    color: #222;
+}
+
+h1 {
+    color: #2a4d7a;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    color: #3a6ea5;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    margin-top: 1em;
+    color: #444;
+    font-size: 1.1em;
+}
+
+ul {
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+}
+
+p {
+    margin-bottom: 1.5em;
+    font-size: 1em;
+}
+
+.resume-title {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 0.5em;
+}

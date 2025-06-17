@@ -1,0 +1,275 @@
+{
+  "name": "Joanne Hoar",
+  "title": "Senior Software Developer",
+  "contact": {
+    "linkedin": "https://linkedin.com/in/joanne-hoar/",
+    "github": "https://github.com/xcodegirl"
+  },
+  "summary": "Canadian Software Developer with 20 years of experience in video game programming, scientific modelling and cross-platform development. Expertise in multiple programming languages, game engines and SDKs. Proven track record in leading teams, mentoring developers, impressing customers and building corporate culture. Strong background in C++, Unreal Engine, iOS and Android using agile methodologies and CI/CD. Passion for algorithmic correctness, mathematics, artificial intelligence and nature.",
+  "experience": [
+    {
+      "date": "Jan 2025 -- present",
+      "title": "Technology Instructor",
+      "company": "Robertson College (contract)",
+      "description": "Develop and deliver interactive course materials for 50+ students per term, Manage and update a GitHub repository hosting open-source course materials, Host live coding sessions, debugging student projects in real-time and archiving recordings for asynchronous review, Participate in ongoing professional development, including monthly instructor training seminars.",
+      "technologies": [
+        "C#",
+        "Databases",
+        "ASP .Net Core",
+        "Front End Frameworks",
+        "Javascript",
+        "Java",
+        "GitHub",
+        "Azure"
+      ]
+    },
+    {
+      "date": "2022 -- 2025",
+      "title": "Senior Software Developer",
+      "company": "bitHeads Inc.",
+      "description": "Developed and maintained cross-platform client API for BaaS to add gamification and real-time multiplayer tech for AAA and Indie Studios. Developed and released demo games and projects. Engineered and maintained CI/CD and TDD pipeline. Responded to customer issues and feature requests.",
+      "technologies": [
+        "Unreal Engine",
+        "C++",
+        "Objective-C",
+        "Swift",
+        "iOS",
+        "Android Native",
+        "Java",
+        "PlayStation",
+        "Node.js",
+        "Groovy",
+        "C# (Unity, Godot)",
+        "Shell Script",
+        "MacOS",
+        "Windows",
+        "Linux"
+      ]
+    },
+    {
+      "date": "2011 -- 2022",
+      "title": "Co-founder/ Lead Developer",
+      "company": "Silicon Hanna Inc. (self-employed)",
+      "description": "Designed, coded and published nine games to commercial app stores for mobile devices. Experimented with cutted edge device tech and SDKs.",
+      "technologies": [
+        "Unreal Engine",
+        "Objective-C / Swift",
+        "iOS",
+        "Android Native",
+        "Kotlin",
+        "Augmented Reality",
+        "MacOS",
+        "Windows"
+      ]
+    },
+    {
+      "date": "2008 -- 2011",
+      "title": "Tools Programmer",
+      "company": "Fekete Associates Inc. (S&P Global)",
+      "description": "Developed tools used mathematical modelled to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.",
+      "technologies": [
+        "C++",
+        "MFC",
+        "Windows"
+      ]
+    },
+    {
+      "date": "2005 -- 2008",
+      "title": "Intermediate Software Engineer",
+      "company": "BJ Pipeline Inspection Services Inc. (Baker Hughes)",
+      "description": "Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reported software. Improved low-level programming algorithms for data processing.",
+      "technologies": [
+        "C++",
+        "C",
+        "OpenGL",
+        "PHP",
+        "SQL",
+        "Neural Networks",
+        "Borland",
+        "Windows",
+        "Linux"
+      ]
+    },
+    {
+      "date": "2005 -- 2008",
+      "title": "Co-founder / App Developer / Instructor",
+      "company": "SuRJE Software Solutions Inc. (self-employed, contract)",
+      "description": "Created and published physics-based games for iOS. Technical writing, web development, google maps and firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with Department of Continued Education.",
+      "technologies": [
+        "C++",
+        "C",
+        "OpenGL",
+        "PHP",
+        "SQL",
+        "Neural Networks",
+        "Borland",
+        "Windows",
+        "Linux"
+      ]
+    },
+    {
+      "date": "2005 - 2006",
+      "title": "Software Researcher / Lead Developer",
+      "company": "PlayStarMusic Corp.",
+      "description": "Lead developer and system administrator for an iTunes like music store. Automated DRM encoded and video streamed. Developed a prototype for a Google competitive search engine.",
+      "technologies": [
+        "C++",
+        "PHP",
+        "Javascript",
+        ".NET",
+        "Windows",
+        "Linux"
+      ]
+    },
+    {
+      "date": "2004 - 2005",
+      "title": "Junior Software Engineer",
+      "company": "Codefast.com",
+      "description": "Ported applications to operate under a new GUI library. Developed user interfaces for software lifecycle automation.",
+      "technologies": [
+        "C++",
+        "Shell script",
+        "Windows",
+        "Unix",
+        "Qt",
+        "Wx"
+      ]
+    },
+    {
+      "date": "2001 - 2004",
+      "title": "Research Assistant",
+      "company": "VLab Computer Graphics Group / Artificial Intelligence Research Hub",
+      "description": "Developed graphics software tools used fractal math and biological modelling. Managed network setup and code base for distributed computing. Participated in interdepartmental projetcs, published five research papers, led student tutorials and marked assignments.",
+      "technologies": [
+        "C++",
+        "OpenGL",
+        "Solaris",
+        "MacOS",
+        "Unix",
+        "Linux",
+        "PHP",
+        "MySQL",
+        "Qt"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "date": "2002 -- 2004",
+      "degree": "Master's Degree",
+      "institution": "University of Calgary",
+      "field": "Computer Science",
+      "thesis": "Agent-based Development of Natural Transportation Networks"
+    },
+    {
+      "date": "1998 -- 2001",
+      "degree": "Bachelor's Degree",
+      "institution": "University of Calgary",
+      "field": "Computer Science"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Departmental Nomination: Governor General's Gold Medal",
+      "organization": "Faculty of Graduate Studies",
+      "year": "2005"
+    },
+    {
+      "title": "Postgraduate Scholarship NSERC D3",
+      "organization": "Natural Sciences and Engineering Research Council of Canada",
+      "year": "2005"
+    },
+    {
+      "title": "Graduate Student Scholarship",
+      "organization": "Alberta Learning",
+      "year": "2004"
+    },
+    {
+      "title": "Best Student Paper Award (Co-author)",
+      "organization": "ACAL",
+      "year": "2003"
+    },
+    {
+      "title": "CPSC Departmental Research Award",
+      "organization": "University of Calgary",
+      "year": "2003"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "native"
+    },
+    {
+      "language": "French",
+      "proficiency": "intermediate"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "rudimentary"
+    }
+  ],
+  "work_samples": [
+    {
+      "title": "xcodegirl/career",
+      "url": "https://github.com/xcodegirl/career/blob/main/xcodegirl-work-samples.md"
+    }
+  ],
+  "published_games": [
+    {
+      "title": "Ragin' Bull",
+      "platforms": ["iOS", "Android"],
+      "year": "2020"
+    },
+    {
+      "title": "AR Picture Portal",
+      "platforms": ["iOS"],
+      "year": "2018"
+    },
+    {
+      "title": "Fragment Reality",
+      "platforms": ["iOS"],
+      "year": "2018"
+    },
+    {
+      "title": "IceCream AR",
+      "platforms": ["iOS"],
+      "year": "2018"
+    },
+    {
+      "title": "Jewel Slide",
+      "platforms": ["iOS", "Android"],
+      "year": ["2017", "2019"]
+    },
+    {
+      "title": "Word Slide & Find",
+      "platforms": ["iOS"],
+      "year": "2017"
+    },
+    {
+      "title": "A Word Theme",
+      "platforms": ["iOS", "Android"],
+      "year": ["2017", "2019"]
+    },
+    {
+      "title": "CryptoQuip",
+      "platforms": ["iOS", "Android"],
+      "year": ["2011", "2019"]
+    },
+    {
+      "title": "Rafter’s Loot",
+      "platforms": ["iOS"],
+      "year": "2011"
+    },
+    {
+      "title": "Star Chase",
+      "platforms": ["iOS"],
+      "year": "2008"
+    },
+    {
+      "title": "Bitsy",
+      "platforms": ["iOS"],
+      "year": "2008"
+    }
+  ]
+}
