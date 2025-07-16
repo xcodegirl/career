@@ -2,6 +2,11 @@
 
 ## Work Samples
 
+### Robertson College - Online Technology Instructor
+I am currently teaching fully online, instructor guided courses in the School of Technology with Robertson College. Subjects have included C# Programming, ASP.NET Core, front-end frameworks (React, JavaScript, Azure), object-oriented programming (Java) and data analysis (Excel). Each course runs from 2 to 6 weeks and we tackle fast-paced projects using industry tools while learning theory and best practices. I design lessons delivered at least three times per week, provide sample code and support students as they complete assignments which I thoroughly review and grade. Students obtain a diploma and/or certification at the end of their studies.
+
+![Robertson Lecture](screenshots/robertson-jo-lecture.png)
+
 ### bitHeads, Inc. - Senior Software Developer
 #### brainCloud BaaS https://getbraincloud.com/
 This is the product I worked on, in particular the Client API for the backend features/service offered for video games and other apps. Refer to Showcase > Demos to see and play the live demo games I helped build, maintain and deploy. Refer to Showcase > Games to see some of the client products that use brainCloud. I focused on C++, mobile and console dev and Unreal Engine. I debugged and code reviewed for all supported platforms/languages.
