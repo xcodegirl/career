@@ -24,6 +24,9 @@ This is the product I worked on, in particular the Client API for the backend fe
 ![brainCloud jo-codegirl](screenshots/braincloud-jo-codegirl.png)
 
 ## Silicon Hanna Inc. - Co-founder / Lead Developer
+### Published Games Showcase
+[games-showcase.md](games-showcase.md) - full catalogue of all eleven published titles with descriptions, store IDs, and tech by era.
+
 ### Silicon Hanna - YouTube https://www.youtube.com/channel/UCt00tah-1SQtDgIPpCNTYZw
 Our games in action: promo videos and demonstrations of the iOS and Android games we made and released. Check out my work in Augmented Reality for iOS. My partner, Ricardo, also demonstrates our games for which he did much of the concept and level design. I worked on much of the implementation details and tech stack research. Earlier games were 2D physics built with OpenGL and Chipmunk.
 
