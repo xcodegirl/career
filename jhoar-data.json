@@ -50,7 +50,7 @@
       "date": "2011 -- 2022",
       "title": "Co-founder/ Lead Developer",
       "company": "Silicon Hanna Inc. (self-employed)",
-      "description": "Designed, coded and published nine games to commercial app stores for mobile devices. Experimented with cutted edge device tech and SDKs.",
+      "description": "Designed, coded and published eleven mobile games for iOS and Android across the SuRJE and Silicon Hanna ventures, from concept and game design through to commercial app-store release. Experimented with cutting-edge device tech and SDKs.",
       "technologies": [
         "Unreal Engine",
         "Objective-C / Swift",
@@ -66,7 +66,7 @@
       "date": "2008 -- 2011",
       "title": "Tools Programmer",
       "company": "Fekete Associates Inc. (S&P Global)",
-      "description": "Developed tools used mathematical modelled to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.",
+      "description": "Developed tools that used mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.",
       "technologies": [
         "C++",
         "MFC",
@@ -77,7 +77,7 @@
       "date": "2005 -- 2008",
       "title": "Intermediate Software Engineer",
       "company": "BJ Pipeline Inspection Services Inc. (Baker Hughes)",
-      "description": "Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reported software. Improved low-level programming algorithms for data processing.",
+      "description": "Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reporting software. Improved low-level programming algorithms for data processing.",
       "technologies": [
         "C++",
         "C",
@@ -94,16 +94,17 @@
       "date": "2005 -- 2008",
       "title": "Co-founder / App Developer / Instructor",
       "company": "SuRJE Software Solutions Inc. (self-employed, contract)",
-      "description": "Created and published physics-based games for iOS. Technical writing, web development, google maps and firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with Department of Continued Education.",
+      "description": "Created and published physics-based games for iOS. Technical writing, web development, Google Maps and Firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with the Department of Continuing Education.",
       "technologies": [
+        "Objective-C",
         "C++",
-        "C",
         "OpenGL",
+        "Chipmunk",
         "PHP",
-        "SQL",
-        "Neural Networks",
-        "Borland",
-        "Windows",
+        "JavaScript",
+        "Firebase",
+        "Google Maps",
+        "iOS",
         "Linux"
       ]
     },
@@ -111,7 +112,7 @@
       "date": "2005 - 2006",
       "title": "Software Researcher / Lead Developer",
       "company": "PlayStarMusic Corp.",
-      "description": "Lead developer and system administrator for an iTunes like music store. Automated DRM encoded and video streamed. Developed a prototype for a Google competitive search engine.",
+      "description": "Lead developer and system administrator for an iTunes-like music store. Automated DRM encoding and video streaming. Developed a prototype for a Google-competitive search engine.",
       "technologies": [
         "C++",
         "PHP",
@@ -139,7 +140,7 @@
       "date": "2001 - 2004",
       "title": "Research Assistant",
       "company": "VLab Computer Graphics Group / Artificial Intelligence Research Hub",
-      "description": "Developed graphics software tools used fractal math and biological modelling. Managed network setup and code base for distributed computing. Participated in interdepartmental projetcs, published five research papers, led student tutorials and marked assignments.",
+      "description": "Developed graphics software tools that used fractal math and biological modelling. Managed network setup and code base for distributed computing. Participated in interdepartmental projects, published five research papers, led student tutorials and marked assignments.",
       "technologies": [
         "C++",
         "OpenGL",
@@ -227,7 +228,7 @@
       "year": "2018"
     },
     {
-      "title": "Fragment Reality",
+      "title": "Fragmented Reality",
       "platforms": ["iOS"],
       "year": "2018"
     },
