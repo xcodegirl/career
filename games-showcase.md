@@ -4,12 +4,9 @@ A showcase of the mobile games I designed, built, and shipped to the App Store a
 
 Links:
 
-- Studio: siliconhanna.com (formerly surje.ca)
-- Promos and live demos: the Silicon Hanna YouTube channel (@siliconhanna195) and the games playlist
-- App Store developer page: Silicon Hanna Inc. (developer id 428848392)
-- Press: Calgary Guardian, and Claresholm Local Press (2021, on Ragin' Bull)
+- Promos and live demos: the Silicon Hanna YouTube channel (@siliconhanna195)
 
-Note: the studio is winding down, so some store listings may now be delisted. The studio pages and YouTube videos remain the most reliable place to see the games in action.
+Note: the studio has closed. The studio website and all App Store and Google Play listings are now inactive. The YouTube channel is the best remaining place to see the games in action. A few long-term fans are still playing CryptoQuip and Word Slide & Find on their older tablets!
 
 ## At a glance
 
@@ -134,8 +131,3 @@ Status: development paused, unreleased.
 - 2018 (AR line): ARKit and SceneKit augmented-reality apps (AR Picture Portal, Fragmented Reality, Ice Cream AR), including real-world physics and fractal-math visuals.
 - 2020 (3D line): Unreal Engine for the studio's first fully 3D open-world title (Ragin' Bull).
 
-## To finish this sheet
-
-- Add per-game screenshots. The Company archive holds nine screen recordings from April 2018 (the AR-app era) plus promo images; pull stills or GIFs from those, and from the YouTube playlist for the later titles.
-- Recover Star Chase and Bitsy details and footage (they predate the SuRJE app catalogue, so they are the only titles here without a verified store id).
-- Verify each store link still resolves before publishing, given the studio wind-down.
