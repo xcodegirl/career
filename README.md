@@ -1,34 +1,38 @@
-# xcodegirl
+# Hi, I'm Jo Hoar
 
-I'm Jo Hoar. Welcome to my GitHub profile, where I am sharing about my career and work experience.
+<img align="right" src="screenshots/jhoar-profile-small.jpg" width="130" alt="Jo Hoar">
 
-## About Me
+Software developer, game studio co-founder, and online instructor based in Alberta, Canada.
 
-I'm a software developer and online instructor.
+I have been writing software professionally for over twenty years, mostly in C++ and native mobile,
+with deep dives into game engines, augmented reality, and scientific computing along the way.
+I co-founded two game studios and shipped eleven mobile games to the App Store and Google Play:
+2D physics games, ARKit augmented reality apps, sliding-tile puzzles, and a fully 3D open-world
+Unreal Engine title.
 
-## Connect
-[xcodegirl on GitHub](https://github.com/xcodegirl)
+These days I teach full-stack development and data analytics online at Robertson College while
+continuing to build software and explore new tools.
 
-[joanne-hoar on Linked In](https://www.linkedin.com/in/joanne-hoar/)
+## What I work with
 
-[linuxcodegirl on You Tube](https://www.youtube.com/@linuxcodegirl/playlists)
+```
+C++ / Objective-C / Swift / Kotlin / C# / Java / Python
+Unreal Engine / ARKit / SceneKit / OpenGL / Chipmunk
+iOS / Android / PlayStation / macOS / Linux / Windows
+ASP.NET Core / React / Node.js / Firebase / Azure / Git
+```
 
-[jo.codegirl on Discord](https://discordapp.com/users/jo.codegirl)
+## Things worth a look
 
-[jo.codegirl on Epic Games](https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65)
+- [Published Games](games-showcase.md) - eleven mobile titles across a decade of indie game dev
+- [Work Samples](xcodegirl-work-samples.md) - screenshots and links from across my career
+- [Resume](xcodegirl-resume.md)
+- [Teaching repo](https://github.com/joanne-hoar) - open-source course materials from Robertson College
 
-joanne.hoar on Google
+## Find me
 
-## My Career
-[Work Samples](xcodegirl-work-samples.md)
-
-[Resume](xcodegirl-resume.md)
-
-## Latex
-Makes use of public LaTeX template available at https://www.latextemplates.com/template/developer-cv
-
-Open jhoar-cv.tex with TexWorks or text editor and run pdflatex command on it.
-
-Use privatecontact.tex to include address, phone number and email.
-
-Use specialpurpose.tex to include an introductory section (cover letter, teaching resume, etc).
+[LinkedIn](https://www.linkedin.com/in/joanne-hoar/) |
+[YouTube](https://www.youtube.com/@linuxcodegirl/playlists) |
+[GitHub (teaching)](https://github.com/joanne-hoar) |
+[Discord: jo.codegirl](https://discordapp.com/users/jo.codegirl) |
+[Epic Games](https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65)
