@@ -1,5 +1,5 @@
 # Joanne Hoar
-**Senior Software Developer**
+**Technology Educator, Software Developer, Game Developer**
 
 **Contact:**
 - [LinkedIn](https://linkedin.com/in/joanne-hoar/)

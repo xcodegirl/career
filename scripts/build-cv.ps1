@@ -16,16 +16,16 @@ function Resolve-RepoPath {
 }
 
 function Resolve-DefaultInputJson {
-    $jsonFiles = Get-ChildItem -Path $PSScriptRoot -Filter '*.json' -File
+    $jsonFiles = Get-ChildItem -Path $PSScriptRoot -Filter '*.json' -File | Where-Object { $_.Name -notlike 'testuser*' }
     if ($jsonFiles.Count -eq 1) {
         return $jsonFiles[0].FullName
     }
 
     if ($jsonFiles.Count -eq 0) {
-        throw 'No JSON resume source found in the repo root. Pass -InputJson explicitly.'
+        throw 'No JSON resume source found in scripts/. Pass -InputJson explicitly.'
     }
 
-    throw 'Multiple JSON files found in the repo root. Pass -InputJson explicitly.'
+    throw 'Multiple JSON files found in scripts/. Pass -InputJson explicitly.'
 }
 
 function Get-CommandOrThrow {
@@ -54,8 +54,15 @@ if ([string]::IsNullOrWhiteSpace($BaseName)) {
     $BaseName = [System.IO.Path]::GetFileNameWithoutExtension($inputPath)
 }
 
-$outputDir = Split-Path -Parent $inputPath
-$latexDir = Join-Path $PSScriptRoot 'latex'
+$repoRoot = Split-Path -Parent $PSScriptRoot
+$outputDir = Join-Path $repoRoot 'formatted'
+$scriptsDir = $PSScriptRoot
+
+# Ensure output directory exists
+if (-not (Test-Path $outputDir)) {
+    New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+}
+
 $pythonCmd = Get-CommandOrThrow @('python', 'py')
 $pdflatexCmd = Get-Command pdflatex -ErrorAction SilentlyContinue
 if (-not $pdflatexCmd) {
@@ -68,27 +75,31 @@ $outputs = @{
     Text      = Join-Path $outputDir "$BaseName.txt"
     Tex       = Join-Path $outputDir "$BaseName.tex"
     Pdf       = Join-Path $outputDir "$BaseName.pdf"
+    Docx      = Join-Path $outputDir "$BaseName.docx"
 }
 
 Write-Host "Input JSON: $inputPath"
 Write-Host "Output directory: $outputDir"
 
-& $pythonCmd (Join-Path $latexDir 'json2md.py') $inputPath $outputs.Markdown
+& $pythonCmd (Join-Path $scriptsDir 'json2md.py') $inputPath $outputs.Markdown
 if ($LASTEXITCODE -ne 0) { throw 'Markdown generation failed.' }
 
-& $pythonCmd (Join-Path $latexDir 'json2html.py') $inputPath $outputs.Html
+& $pythonCmd (Join-Path $scriptsDir 'json2html.py') $inputPath $outputs.Html
 if ($LASTEXITCODE -ne 0) { throw 'HTML generation failed.' }
 
-& $pythonCmd (Join-Path $latexDir 'json2txt.py') $inputPath $outputs.Text
+& $pythonCmd (Join-Path $scriptsDir 'json2txt.py') $inputPath $outputs.Text
 if ($LASTEXITCODE -ne 0) { throw 'Plain-text generation failed.' }
 
-& $pythonCmd (Join-Path $latexDir 'json2tex.py') $inputPath $outputs.Tex
+& $pythonCmd (Join-Path $scriptsDir 'json2tex.py') $inputPath $outputs.Tex
 if ($LASTEXITCODE -ne 0) { throw 'LaTeX generation failed.' }
+
+& $pythonCmd (Join-Path $scriptsDir 'json2docx.py') $inputPath $outputs.Docx
+if ($LASTEXITCODE -ne 0) { throw 'Word document generation failed.' }
 
 Push-Location $outputDir
 try {
     $originalTexInputs = $env:TEXINPUTS
-    $env:TEXINPUTS = "$latexDir;"
+    $env:TEXINPUTS = "$scriptsDir;"
     & $pdflatexCmd.Source -interaction=nonstopmode -jobname $BaseName -output-directory $outputDir (Split-Path -Leaf $outputs.Tex)
     if ($LASTEXITCODE -ne 0) { throw 'PDF build failed.' }
 }
@@ -109,3 +120,4 @@ Write-Host "Wrote HTML: $($outputs.Html)"
 Write-Host "Wrote plain text: $($outputs.Text)"
 Write-Host "Wrote LaTeX: $($outputs.Tex)"
 Write-Host "Wrote PDF: $($outputs.Pdf)"
+Write-Host "Wrote Word document: $($outputs.Docx)"
