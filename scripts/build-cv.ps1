@@ -148,11 +148,6 @@ Write-Host "Generating PDF (article style)..." -ForegroundColor Cyan
 & $pythonCmd (Join-Path $scriptsDir 'json2pdf.py') $inputPath $outputs.Pdf
 if ($LASTEXITCODE -ne 0) { throw 'PDF generation failed (article style).' }
 
-Write-Host "Generating PDF (developer style)..." -ForegroundColor Cyan
-$pdfDeveloper = Join-Path $outputDir "$BaseName-dev.pdf"
-& $pythonCmd (Join-Path $scriptsDir 'json2pdf-developer.py') $inputPath $pdfDeveloper
-if ($LASTEXITCODE -ne 0) { throw 'PDF generation failed (developer style).' }
-
 Write-Host "Generating Word document..." -ForegroundColor Cyan
 & $pythonCmd (Join-Path $scriptsDir 'json2docx.py') $inputPath $outputs.Docx
 if ($LASTEXITCODE -ne 0) { throw 'Word document generation failed.' }
@@ -163,6 +158,5 @@ Write-Host "Output files:"
 Write-Host "  Markdown: $($outputs.Markdown)"
 Write-Host "  HTML: $($outputs.Html)"
 Write-Host "  Plain text: $($outputs.Text)"
-Write-Host "  PDF (article): $($outputs.Pdf)"
-Write-Host "  PDF (developer): $pdfDeveloper"
+Write-Host "  PDF: $($outputs.Pdf)"
 Write-Host "  Word: $($outputs.Docx)"

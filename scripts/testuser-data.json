@@ -4,10 +4,10 @@
   "contact": {
     "email": "alex@example.com",
     "phone": "(555) 123-4567",
-    "linkedin": "https://linkedin.com/in/alex-example/",
-    "github": "https://github.com/exampledev",
-    "twitter": "https://twitter.com/alexexample",
-    "website": "https://alexexample.dev"
+    "linkedin": "https://www.linkedin.com/company/linkedin/",
+    "github": "https://github.com/github",
+    "twitter": "https://x.com/twitter",
+    "website": "https://google.com"
   },
   "summary": "Creative developer with 10 years of experience in web and cloud technologies. Expertise in modern frameworks and cloud infrastructure. Proven ability to lead teams and deliver scalable solutions.",
   "skills": {
@@ -147,11 +147,11 @@
   "portfolio": [
     {
       "title": "GitHub Portfolio",
-      "url": "https://github.com/exampledev"
+      "url": "https://github.com/github"
     },
     {
       "title": "Personal Website",
-      "url": "https://alexexample.dev"
+      "url": "https://google.com"
     }
   ]
 }

@@ -340,7 +340,8 @@ def add_portfolio_section(lines, resume_data):
     for item in resume_data["portfolio"]:
         title = escape_latex(item.get("title", ""))
         url = item.get("url", "")
-        lines.append(f'\\faIcon{{github}}~\\href{{{escape_latex(url)}}}{{{title}}}\\\\' )
+        icon = "github" if "github.com" in url else "globe"
+        lines.append(f'\\faIcon{{{icon}}}~\\href{{{escape_latex(url)}}}{{{title}}}\\\\' )
 
     lines.append('')
 
