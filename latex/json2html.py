@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 
 def html_escape(text):
@@ -22,7 +23,7 @@ def main():
     if len(sys.argv) > 2:
         html_file = sys.argv[2]
     else:
-        html_file = json_file.replace('.json', '-resume.html')
+        html_file = os.path.splitext(json_file)[0] + '.html'
 
     with open(json_file, encoding='utf-8') as f:
         data = json.load(f)

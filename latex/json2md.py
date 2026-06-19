@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 
 def md_escape(text):
@@ -21,7 +22,7 @@ def main():
     if len(sys.argv) > 2:
         md_file = sys.argv[2]
     else:
-        md_file = json_file.replace('.json', '-resume.md')
+        md_file = os.path.splitext(json_file)[0] + '.md'
 
     with open(json_file, encoding='utf-8') as f:
         data = json.load(f)

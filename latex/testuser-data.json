@@ -2,18 +2,16 @@
   "name": "Alex Example",
   "title": "Full Stack Developer",
   "contact": {
-    "location": "Example City, Wonderland",
-    "email": "alex@example.com",
     "linkedin": "https://linkedin.com/in/alex-example/",
     "github": "https://github.com/exampledev"
   },
-  "summary": "Creative developer with 10 years of experience in web and cloud technologies. Enjoys building scalable applications and mentoring junior engineers.",
+  "summary": "Creative developer with 10 years of experience in web and cloud technologies. Expertise in modern frameworks and cloud infrastructure. Proven ability to lead teams and deliver scalable solutions.",
   "experience": [
     {
       "date": "2022 -- present",
       "title": "Lead Developer",
       "company": "ExampleSoft",
-      "description": "Leading a team of 8 developers to deliver SaaS products for global clients. Architected microservices and CI/CD pipelines.",
+      "description": "Leading a team of 8 developers to deliver SaaS products for global clients. Architected microservices and CI/CD pipelines. Mentored junior engineers.",
       "technologies": [
         "Python",
         "Django",
@@ -27,7 +25,7 @@
       "date": "2017 -- 2022",
       "title": "Software Engineer",
       "company": "Webify Inc.",
-      "description": "Developed REST APIs and modern web apps. Automated testing and deployment.",
+      "description": "Developed REST APIs and modern web applications. Automated testing and deployment pipelines. Improved system performance by 40%.",
       "technologies": [
         "Node.js",
         "Express",
@@ -40,9 +38,32 @@
   "education": [
     {
       "date": "2013 -- 2017",
-      "degree": "BSc Computer Science",
+      "degree": "BSc",
       "institution": "Wonderland University",
       "field": "Computer Science"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Developer of the Year",
+      "organization": "Webify Inc.",
+      "year": "2021"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "native"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "intermediate"
+    }
+  ],
+  "work_samples": [
+    {
+      "title": "Portfolio",
+      "url": "https://github.com/exampledev"
     }
   ]
 }

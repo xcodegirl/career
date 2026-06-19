@@ -1,5 +1,8 @@
 import json
+import os
 import sys
+
+HEADER_RULE = '%----------------------------------------------------------------------------------------'
 
 def tex_escape(text):
     """Escape LaTeX special characters and normalize quotes/dashes."""
@@ -33,7 +36,7 @@ def main():
     if len(sys.argv) > 2:
         tex_file = sys.argv[2]
     else:
-        tex_file = json_file.replace('.json', '-cv-fromjson.tex')
+        tex_file = os.path.splitext(json_file)[0] + '.tex'
 
     with open(json_file, encoding='utf-8') as f:
         data = json.load(f)
@@ -41,13 +44,23 @@ def main():
     lines = []
     lines.append('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
     lines.append(f'% Developer CV for {tex_escape(data["name"])}')
+    lines.append('% makes use of public LaTeX template available at https://www.latextemplates.com/template/developer-cv')
+    lines.append('%')
     lines.append('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
     lines.append('')
+    lines.append(HEADER_RULE)
+    lines.append('%      PACKAGES AND OTHER DOCUMENT CONFIGURATIONS')
+    lines.append(HEADER_RULE)
+    lines.append('')
     lines.append('\\documentclass[9pt]{developercv}')
+    lines.append('')
+    lines.append(HEADER_RULE)
     lines.append('\\begin{document}')
     lines.append('')
-    # Title and Contact
+    lines.append(HEADER_RULE)
     lines.append('% TITLE AND CONTACT INFORMATION')
+    lines.append(HEADER_RULE)
+    lines.append('')
     lines.append('\\begin{minipage}[t]{0.45\\textwidth}')
     name_parts = data["name"].split()
     first = tex_escape(name_parts[0]) if name_parts else ""
@@ -75,14 +88,20 @@ def main():
         lines.append(f'\\icon{{Github}}{{12}}{{\\href{{{tex_escape(contact["github"])}}}{{github: {tex_escape(contact["github"].split("/")[-1])}}}}}\\\\')
     lines.append('\\end{minipage}')
     lines.append('')
-    # Introduction
+    lines.append('\\vspace{0.5cm}')
+    lines.append('')
+    lines.append(HEADER_RULE)
     lines.append('% INTRODUCTION')
+    lines.append(HEADER_RULE)
+    lines.append('')
     lines.append('\\cvsect{Who Am I?}')
     lines.append(tex_escape(data["summary"]))
     lines.append('')
-    # Experience
+    lines.append(HEADER_RULE)
     if data.get("experience"):
         lines.append('% EXPERIENCE')
+        lines.append(HEADER_RULE)
+        lines.append('')
         lines.append('\\cvsect{Experience}')
         lines.append('\\begin{entrylist}')
         for exp in data["experience"]:
@@ -99,9 +118,11 @@ def main():
                 lines.append(f'\t\t{{{desc}}}')
         lines.append('\\end{entrylist}')
         lines.append('')
-    # Education
+        lines.append(HEADER_RULE)
     if data.get("education"):
         lines.append('% EDUCATION')
+        lines.append(HEADER_RULE)
+        lines.append('')
         lines.append('\\cvsect{education}')
         lines.append('\\begin{entrylist}')
         for edu in data["education"]:
@@ -121,26 +142,34 @@ def main():
                 lines.append('\t\t{}')
         lines.append('\\end{entrylist}')
         lines.append('')
-    # Community Outreach
+        lines.append(HEADER_RULE)
     if data.get("community_outreach"):
         lines.append('% COMMUNITY OUTREACH')
+        lines.append(HEADER_RULE)
+        lines.append('')
         lines.append('\\cvsect{Community Outreach}')
         for c in data["community_outreach"]:
             org = f", {tex_escape(c['organization'])}" if c.get("organization") else ""
             lines.append(f'$\\bullet$ {tex_escape(c["role"])}{org}, {tex_escape(c["years"])}\\\\')
         lines.append('')
-    # Awards
+        lines.append(HEADER_RULE)
     if data.get("awards"):
+        lines.append('% AWARDS')
+        lines.append(HEADER_RULE)
+        lines.append('')
         lines.append('\\cvsect{Awards}')
         for a in data["awards"]:
             org = tex_escape(a.get("organization", ""))
             year = tex_escape(a.get("year", ""))
             lines.append(f'$\\bullet$ {tex_escape(a["title"])}{", " + org if org else ""}{", " + year if year else ""}\\\\')
         lines.append('')
-    # Languages and Work Samples
+        lines.append(HEADER_RULE)
     has_languages = bool(data.get("languages"))
     has_work_samples = bool(data.get("work_samples"))
     if has_languages or has_work_samples:
+        lines.append('% ADDITIONAL INFORMATION')
+        lines.append(HEADER_RULE)
+        lines.append('')
         lines.append('\\begin{minipage}[t]{0.5\\textwidth}')
         if has_languages:
             lines.append('\\cvsect{Languages}')
@@ -153,7 +182,6 @@ def main():
                 lines.append(f'\\icon{{Github}}{{12}}{{\\href{{{tex_escape(ws["url"])}}}{{github.com: {tex_escape(repo)}}}}}.')
         lines.append('\\end{minipage}')
         lines.append('\\hfill')
-    # Published Games
     if data.get("published_games"):
         lines.append('\\begin{minipage}[t]{0.5\\textwidth}')
         lines.append('\\cvsect{Published Games}')
@@ -163,10 +191,17 @@ def main():
             lines.append(f'$\\bullet$ {tex_escape(g["title"])} - {platforms} ({year})\\\\')
         lines.append('\\end{minipage}')
         lines.append('')
+    lines.append(HEADER_RULE)
+    lines.append('')
     lines.append('\\end{document}')
+
+    if os.path.exists(tex_file):
+        print(f"Overwriting existing file: {tex_file}")
 
     with open(tex_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
+
+    print(f"Wrote LaTeX CV to: {tex_file}")
 
 if __name__ == "__main__":
     main()
