@@ -1,6 +1,6 @@
 {
   "name": "Joanne Hoar",
-  "title": "Technology Educator, Software Developer, Game Developer",
+  "title": "Technology Educator, Software/Game Developer",
   "contact": {
     "linkedin": "https://linkedin.com/in/joanne-hoar/",
     "github": "https://github.com/xcodegirl"
@@ -213,24 +213,10 @@
       "year": "2003"
     }
   ],
-  "languages": [
-    {
-      "language": "English",
-      "proficiency": "native"
-    },
-    {
-      "language": "French",
-      "proficiency": "intermediate"
-    },
-    {
-      "language": "Spanish",
-      "proficiency": "rudimentary"
-    }
-  ],
   "portfolio": [
     {
-      "title": "Work Samples",
-      "url": "https://github.com/xcodegirl/career"
+      "title": "xcodegirl/career",
+      "url": "https://github.com/xcodegirl/career/blob/main/xcodegirl-work-samples.md"
     }
   ],
   "published_games": [

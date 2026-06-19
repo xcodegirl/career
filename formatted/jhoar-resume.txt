@@ -1,5 +1,5 @@
 Joanne Hoar
-Technology Educator, Software Developer, Game Developer
+Technology Educator, Software/Game Developer
 
 CONTACT
 -------
@@ -81,15 +81,9 @@ AWARDS
 - Best Student Paper Award (Co-author), ACAL, 2003
 - CPSC Departmental Research Award, University of Calgary, 2003
 
-LANGUAGES
----------
-- English: native
-- French: intermediate
-- Spanish: rudimentary
-
 PORTFOLIO
 ---------
-- Work Samples: https://github.com/xcodegirl/career
+- xcodegirl/career: https://github.com/xcodegirl/career/blob/main/xcodegirl-work-samples.md
 
 PUBLISHED GAMES
 ---------------
@@ -101,6 +95,6 @@ PUBLISHED GAMES
 - Word Slide & Find (iOS; 2017)
 - A Word Theme (iOS, Android; 2017, 2019)
 - CryptoQuip (iOS, Android; 2011, 2019)
-- Rafter's Loot (iOS; 2011)
+- Rafter’s Loot (iOS; 2011)
 - Star Chase (iOS; 2008)
 - Bitsy (iOS; 2008)

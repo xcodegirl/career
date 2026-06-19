@@ -51,11 +51,11 @@
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
 	top=1.75cm, % Top margin
-	bottom=1.75cm, % Bottom margin
+	bottom=1cm, % Bottom margin (reduced from 1.75cm)
 	left=2cm, % Left margin
 	right=2cm, % Right margin
 	headheight=0.75cm, % Header height
-	footskip=1cm, % Space from the bottom margin to the baseline of the footer
+	footskip=0.75cm, % Space from the bottom margin to the baseline of the footer (reduced)
 	headsep=0.5cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
 }
@@ -192,12 +192,13 @@
 }
 
 \newcommand{\entry}[4]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier and the fourth is for the entry description
-	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
+	&\parbox[t]{\textwidth}{
+		\textbf{\Large#2}% Entry heading text (full width)
+	}\\%
+	\parbox[t]{0.175\textwidth}{%
 		#1 % Leftmost entry date(s) text
 	}%
-	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
-		\textbf{#2}% Entry heading text
-		\hfill% Horizontal whitespace
+	&\parbox[t]{0.825\textwidth}{%
 		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
 		#4 % Entry description text
 	}\\\\}

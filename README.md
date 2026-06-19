@@ -35,16 +35,19 @@ ASP.NET Core / React / Node.js / Firebase / Azure / Git
 [LinkedIn](https://www.linkedin.com/in/joanne-hoar/) |
 [YouTube](https://www.youtube.com/@linuxcodegirl/playlists) |
 [GitHub (teaching)](https://github.com/joanne-hoar) |
+[GitHub (dev)](https://github.com/xcodegirl) |
 [Discord: jo.codegirl](https://discordapp.com/users/jo.codegirl) |
 [Epic Games](https://store.epicgames.com/u/2c842f1b84774f7f96984af5f9323c65)
 
-## Multi-format resume generator
+## CV Generation
 
-This repo generates professional CV/resume documents in six formats from a single JSON source file. It uses a public LaTeX template from [latextemplates.com](https://www.latextemplates.com/template/developer-cv).
+This repo generates professional CVs in **six formats** (PDF, LaTeX, Markdown, HTML, DOCX, TXT) from a single JSON source file, with two style options (article or developer CV).
 
-### Quick start
+**→ See [scripts/CV-GENERATION.md](scripts/CV-GENERATION.md) for complete documentation**
 
-**Windows Explorer:** Double-click `scripts/build-cv.bat`
+### Quick Start
+
+**Windows Explorer:** Double-click `scripts/build-cv.bat` (activates venv automatically)
 
 **PowerShell:**
 ```powershell
@@ -52,55 +55,20 @@ cd scripts
 .\build-cv.ps1
 ```
 
-### How it works
-
-1. Edit `scripts/jhoar-resume.json` with your resume data
-2. Run the build script
-3. All formats are generated to `formatted/`
-
-### Output formats
-
-- **Markdown** (`*.md`) — Clean, portable format
-- **HTML** (`*.html`) — Self-contained single file with embedded CSS
-- **Plain text** (`*.txt`) — No formatting
-- **LaTeX** (`*.tex`) — Source code for PDF compilation
-- **PDF** (`*.pdf`) — Print-ready document
-- **Word** (`*.docx`) — Editable Microsoft Word document
-
 ### Requirements
 
-| Tool | Purpose | Install |
-|------|---------|---------|
-| Python 3.7+ | Run build scripts | [python.org](https://python.org) |
-| python-docx | Generate Word documents | `pip install python-docx` |
-| MiKTeX or TeX Live | PDF generation | [miktex.org](https://miktex.org) or [tug.org](https://tug.org/texlive) |
+- Python 3.7+
+- MiKTeX or TeX Live (for PDF generation)
+- python-docx (for Word documents)
 
-**Verify installation:**
+### Virtual Environment
+
+This repo uses a local `.venv` to isolate dependencies:
+
 ```powershell
-python --version
-pip show python-docx
-pdflatex --version
+# Auto-detected and used by build scripts
+# Or manually activate:
+.\.venv\Scripts\Activate.ps1
+cd scripts
+.\build-cv.ps1
 ```
-
-### Advanced: Manual PDF compilation
-
-To compile the LaTeX source directly:
-```powershell
-cd formatted
-$env:TEXINPUTS = (Resolve-Path ..\scripts).Path + ';'
-pdflatex -interaction=nonstopmode jhoar-resume.tex
-```
-
-### Customizing the resume
-
-Edit `scripts/jhoar-resume.json` with sections for:
-- Contact (LinkedIn, GitHub)
-- Summary
-- Experience (with dates, companies, descriptions, and technologies)
-- Education
-- Awards & honors
-- Languages
-- Portfolio links
-- Published games (if applicable)
-
-The build system handles formatting—just provide clean data.

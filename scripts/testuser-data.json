@@ -2,10 +2,20 @@
   "name": "Alex Example",
   "title": "Full Stack Developer",
   "contact": {
+    "email": "alex@example.com",
+    "phone": "(555) 123-4567",
     "linkedin": "https://linkedin.com/in/alex-example/",
-    "github": "https://github.com/exampledev"
+    "github": "https://github.com/exampledev",
+    "twitter": "https://twitter.com/alexexample",
+    "website": "https://alexexample.dev"
   },
   "summary": "Creative developer with 10 years of experience in web and cloud technologies. Expertise in modern frameworks and cloud infrastructure. Proven ability to lead teams and deliver scalable solutions.",
+  "skills": {
+    "Backend Languages": ["Python", "JavaScript/Node.js", "Go", "Java"],
+    "Frontend Frameworks": ["React", "Vue.js", "Angular", "TypeScript"],
+    "Cloud & DevOps": ["AWS", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
+    "Databases": ["PostgreSQL", "MongoDB", "Redis", "DynamoDB"]
+  },
   "experience": [
     {
       "date": "2022 -- present",
@@ -43,11 +53,69 @@
       "field": "Computer Science"
     }
   ],
+  "certifications": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credential_id": "AWS-12345678",
+      "credential_url": "https://aws.amazon.com/verification"
+    },
+    {
+      "title": "Kubernetes Application Developer",
+      "issuer": "Linux Foundation",
+      "date": "2022",
+      "credential_id": "LFCD-2022-001"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Real-time Analytics Dashboard",
+      "description": "Built a high-performance dashboard processing 1M+ events daily using React and Kafka.",
+      "url": "https://github.com/exampledev/analytics-dashboard",
+      "technologies": ["React", "Node.js", "Kafka", "PostgreSQL"],
+      "date": "2023"
+    },
+    {
+      "title": "Microservices Framework",
+      "description": "Open-source framework for building scalable microservices with built-in observability.",
+      "url": "https://github.com/exampledev/micro-framework",
+      "technologies": ["Go", "gRPC", "Docker"],
+      "date": "2021 -- present"
+    }
+  ],
+  "volunteer": [
+    {
+      "date": "2020 -- present",
+      "title": "Technical Mentor",
+      "organization": "Code for Good",
+      "description": "Mentoring junior developers from underrepresented backgrounds. Led workshops on cloud architecture and DevOps practices."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Scaling Microservices: Best Practices and Pitfalls",
+      "publication": "Dev.to",
+      "date": "2023",
+      "url": "https://dev.to/alexexample/scaling-microservices"
+    },
+    {
+      "title": "Kubernetes in Production: Lessons Learned",
+      "publication": "Medium",
+      "date": "2022",
+      "url": "https://medium.com/@alexexample/k8s-lessons"
+    }
+  ],
   "awards": [
     {
       "title": "Developer of the Year",
       "organization": "Webify Inc.",
       "year": "2021"
+    },
+    {
+      "title": "Open Source Contributor Award",
+      "organization": "Tech Community Alliance",
+      "year": "2023"
     }
   ],
   "languages": [
@@ -58,12 +126,32 @@
     {
       "language": "Spanish",
       "proficiency": "intermediate"
+    },
+    {
+      "language": "Mandarin",
+      "proficiency": "beginner"
+    }
+  ],
+  "memberships": [
+    {
+      "organization": "ACM",
+      "title": "Member",
+      "date": "2018 -- present"
+    },
+    {
+      "organization": "Cloud Native Computing Foundation",
+      "title": "Member",
+      "date": "2021 -- present"
     }
   ],
   "portfolio": [
     {
-      "title": "Portfolio",
+      "title": "GitHub Portfolio",
       "url": "https://github.com/exampledev"
+    },
+    {
+      "title": "Personal Website",
+      "url": "https://alexexample.dev"
     }
   ]
 }
