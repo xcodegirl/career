@@ -87,8 +87,8 @@ LANGUAGES
 - French: intermediate
 - Spanish: rudimentary
 
-WORK SAMPLES
-------------
+PORTFOLIO
+---------
 - Work Samples: https://github.com/xcodegirl/career
 
 PUBLISHED GAMES

@@ -113,9 +113,9 @@ def main():
             lines.append(f"- {txt_escape(language['language'])}: {txt_escape(language['proficiency'])}")
         lines.append('')
 
-    if data.get('work_samples'):
-        add_section(lines, 'Work Samples')
-        for sample in data['work_samples']:
+    if data.get('portfolio'):
+        add_section(lines, 'Portfolio')
+        for sample in data['portfolio']:
             lines.append(f"- {txt_escape(sample['title'])}: {txt_escape(sample['url'])}")
         lines.append('')
 

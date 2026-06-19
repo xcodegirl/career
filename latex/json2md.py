@@ -109,10 +109,10 @@ def main():
             lines.append(f"- {md_escape(l['language'])}: {md_escape(l['proficiency'])}")
         lines.append("")
 
-    # Work Samples
-    if data.get("work_samples"):
-        lines.append("## Work Samples")
-        for ws in data["work_samples"]:
+    # Portfolio
+    if data.get("portfolio"):
+        lines.append("## Portfolio")
+        for ws in data["portfolio"]:
             lines.append(f"- [{md_escape(ws['title'])}]({ws['url']})")
         lines.append("")
 

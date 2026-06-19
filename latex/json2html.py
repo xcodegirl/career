@@ -164,12 +164,12 @@ def main():
         lines.append('</ul>')
         lines.append('</div>')
 
-    # Work Samples
-    if data.get("work_samples"):
+    # Portfolio
+    if data.get("portfolio"):
         lines.append('<div class="section">')
-        lines.append('<h2>Work Samples</h2>')
+        lines.append('<h2>Portfolio</h2>')
         lines.append('<ul>')
-        for ws in data["work_samples"]:
+        for ws in data["portfolio"]:
             lines.append(f'<li><a href="{html_escape(ws["url"])}">{html_escape(ws["title"])}</a></li>')
         lines.append('</ul>')
         lines.append('</div>')

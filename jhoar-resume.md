@@ -81,7 +81,7 @@ Jan 2025 -- present
 - French: intermediate
 - Spanish: rudimentary
 
-## Work Samples
+## Portfolio
 - [Work Samples](https://github.com/xcodegirl/career)
 
 ## Published Games

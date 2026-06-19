@@ -165,8 +165,8 @@ def main():
         lines.append('')
         lines.append(HEADER_RULE)
     has_languages = bool(data.get("languages"))
-    has_work_samples = bool(data.get("work_samples"))
-    if has_languages or has_work_samples:
+    has_portfolio = bool(data.get("portfolio"))
+    if has_languages or has_portfolio:
         lines.append('% ADDITIONAL INFORMATION')
         lines.append(HEADER_RULE)
         lines.append('')
@@ -175,9 +175,9 @@ def main():
             lines.append('\\cvsect{Languages}')
             for l in data["languages"]:
                 lines.append(f'\\textbf{{{tex_escape(l["language"])}}} - {tex_escape(l["proficiency"])}\\\\')
-        if has_work_samples:
-            lines.append('\\cvsect{Work Samples}')
-            for ws in data["work_samples"]:
+        if has_portfolio:
+            lines.append('\\cvsect{Portfolio}')
+            for ws in data["portfolio"]:
                 repo = ws["url"].replace("https://github.com/", "")
                 lines.append(f'\\icon{{Github}}{{12}}{{\\href{{{tex_escape(ws["url"])}}}{{github.com: {tex_escape(repo)}}}}}.')
         lines.append('\\end{minipage}')
