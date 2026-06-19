@@ -26,7 +26,8 @@ ASP.NET Core / React / Node.js / Firebase / Azure / Git
 
 - [Published Games](games-showcase.md) - eleven mobile titles across a decade of indie game dev
 - [Work Samples](xcodegirl-work-samples.md) - screenshots and links from across my career
-- [Resume](jhoar-resume.md)
+- [Resume](xcodegirl-resume.md)
+- [Dev repo](https://github.com/joanne-hoar) - pet projects
 - [Teaching repo](https://github.com/joanne-hoar) - open-source course materials from Robertson College
 
 ## Find me
