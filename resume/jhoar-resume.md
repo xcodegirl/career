@@ -1,5 +1,5 @@
 # Joanne Hoar
-**Technology Educator, Software/Game Developer**
+## Technology Educator, Software Developer, Game Developer
 
 **Contact:**
 - [LinkedIn](https://linkedin.com/in/joanne-hoar/)
@@ -12,62 +12,59 @@ Canadian Software Developer with 20 years of experience in video game programmin
 **Technology Instructor**, Robertson College (contract)
 Jan 2025 -- present
 - Instructed 20+ course offerings across Full Stack Development and Data Analytics diploma programs. Delivered live coding sessions, maintained open-source course materials on GitHub, and achieved an average student satisfaction rating of 4.5/5.0.
-  - _Technologies:_ C#, .NET, ASP .NET Core, Java, JavaScript, React, Git, GitHub, Azure, SQL
+  _Technologies:_ `C#` / `.NET` / `ASP .NET Core` / `Java` / `JavaScript` / `React` / `Git` / `GitHub` / `Azure` / `SQL`
 
 **Senior Software Developer**, bitHeads Inc.
 2022 -- 2025
 - Developed and maintained cross-platform client SDKs for a backend-as-a-service platform used by 50+ published games across 12 platforms including PlayStation, Xbox, Nintendo Switch, iOS, and Android. Engineered CI/CD and TDD pipelines and managed customer relationships with AAA and Indie studios.
-  - _Technologies:_ Unreal Engine, C++, Objective-C, Swift, iOS, Android Native, Java, Kotlin, PlayStation, Xbox, Nintendo Switch, Node.js, Groovy, C#, Shell Script
+  _Technologies:_ `Unreal Engine` / `C++` / `Objective-C` / `Swift` / `iOS` / `Android Native` / `Java` / `Kotlin` / `PlayStation` / `Xbox` / `Nintendo Switch` / `Node.js` / `Groovy` / `C#` / `Shell Script`
 
 **Co-founder/ Lead Developer**, Silicon Hanna Inc. (self-employed)
 2011 -- 2022
 - Designed, coded and published eleven mobile games for iOS and Android, from concept and game design through to commercial app-store release. Experimented with cutting-edge device technologies including ARKit and other emerging SDKs.
-  - _Technologies:_ Unreal Engine, Objective-C / Swift, iOS, Android Native, Kotlin, Augmented Reality, MacOS, Windows
+  _Technologies:_ `Unreal Engine` / `Objective-C / Swift` / `iOS` / `Android Native` / `Kotlin` / `Augmented Reality` / `MacOS` / `Windows`
 
 **Tools Programmer**, Fekete Associates Inc. (S&P Global)
 2008 -- 2011
 - Developed tools that used mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.
-  - _Technologies:_ C++, MFC, Windows
+  _Technologies:_ `C++` / `MFC` / `Windows`
 
 **Intermediate Software Engineer**, BJ Pipeline Inspection Services Inc. (Baker Hughes)
 2005 -- 2008
 - Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reporting software. Improved low-level programming algorithms for data processing.
-  - _Technologies:_ C++, C, OpenGL, PHP, SQL, Neural Networks, Borland, Windows, Linux
+  _Technologies:_ `C++` / `C` / `OpenGL` / `PHP` / `SQL` / `Neural Networks` / `Borland` / `Windows` / `Linux`
 
 **Co-founder / App Developer / Instructor**, SuRJE Software Solutions Inc. (self-employed, contract)
 2005 -- 2008
 - Created and published physics-based games for iOS. Technical writing, web development, Google Maps and Firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with the Department of Continuing Education.
-  - _Technologies:_ Objective-C, C++, OpenGL, Chipmunk, PHP, JavaScript, Firebase, Google Maps, iOS, Linux
+  _Technologies:_ `Objective-C` / `C++` / `OpenGL` / `Chipmunk` / `PHP` / `JavaScript` / `Firebase` / `Google Maps` / `iOS` / `Linux`
 
 **Software Researcher / Lead Developer**, PlayStarMusic Corp.
 2005 - 2006
 - Lead developer and system administrator for an iTunes-like music store. Automated DRM encoding and video streaming. Developed a prototype for a Google-competitive search engine.
-  - _Technologies:_ C++, PHP, Javascript, .NET, Windows, Linux
+  _Technologies:_ `C++` / `PHP` / `Javascript` / `.NET` / `Windows` / `Linux`
 
 **Junior Software Engineer**, Codefast.com
 2004 - 2005
 - Ported applications to operate under a new GUI library. Developed user interfaces for software lifecycle automation.
-  - _Technologies:_ C++, Qt, Wx, Shell script, Windows, Unix
+  _Technologies:_ `C++` / `Qt` / `Wx` / `Shell script` / `Windows` / `Unix`
 
 **Web Developer / VR Artist**, Nickle Arts Museum, University of Calgary (contract)
 2002 -- 2004
 - Designed and developed an interactive online catalogue for the Gerald Hushlak art exhibit with JavaScript-based features. Contributed original generative art from graduate research. Collaborated on a pioneering VR installation using 3D scanning and CAVE immersion technology.
-  - _Technologies:_ JavaScript, C++, OpenGL, PHP, HTML, CSS, 3D Scanning, VR
+  _Technologies:_ `JavaScript` / `C++` / `OpenGL` / `PHP` / `HTML` / `CSS` / `3D Scanning` / `VR`
 
 **Research Assistant**, VLab Computer Graphics Group / Artificial Intelligence Research Hub
 2001 - 2004
 - Developed graphics software tools using fractal mathematics and biological modelling. Managed network setup and distributed computing infrastructure. Published five research papers and served as teaching assistant across three courses.
-  - _Technologies:_ C++, OpenGL, PHP, MySQL, Qt, Solaris, Unix, Linux
+  _Technologies:_ `C++` / `OpenGL` / `PHP` / `MySQL` / `Qt` / `Solaris` / `Unix` / `Linux`
 
 ## Education
-**Master's Degree**, University of Calgary
-2002 -- 2004
-- Field: Computer Science
-- Thesis: _Agent-based Development of Natural Transportation Networks_
+**Master's Degree** in Computer Science
+_University of Calgary_ — 2002 -- 2004
 
-**Bachelor's Degree**, University of Calgary
-1998 -- 2001
-- Field: Computer Science
+**Bachelor's Degree** in Computer Science
+_University of Calgary_ — 1998 -- 2001
 
 ## Awards
 - Departmental Nomination: Governor General's Gold Medal, Faculty of Graduate Studies, 2005

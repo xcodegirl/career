@@ -1,0 +1,144 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.7in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{moresize}
+\usepackage{fontawesome5}
+\usepackage[default]{raleway}
+\usepackage{multicol}
+
+% Colour scheme
+\definecolor{accent}{RGB}{10,60,90}
+\definecolor{secondary}{RGB}{30,30,30}
+
+% Font and layout
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\newcommand{\mytitle}[1]{\color{accent}\normalfont\large\bfseries{#1}}
+\newcommand{\tech}[1]{\textcolor{secondary}{\textbf{#1}}}
+
+% Section style
+\titleformat{\section}{\mytitle}{}{0em}{}[{\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+% Bullet list formatting
+\setlist[itemize]{leftmargin=*,nosep,after=\vspace{3pt}}
+\setlist[itemize]{label=\color{accent}\scriptsize\raisebox{0.4ex}{\textbullet}}
+
+% Custom macros
+\newcommand{\experience}[4]{%
+  \vspace{4pt}
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#2} \\
+    \textit{\small#3} & \textit{\small#4}
+  \end{tabular*}
+  \vspace{-4pt}
+}
+
+\begin{document}
+
+% ===== Header =====
+\begin{center}
+\colorbox{gray}{\HUGE\textcolor{white}{\textbf{Alex}}} \\[2pt]
+\colorbox{gray}{\HUGE\textcolor{white}{\textbf{Example}}} \\[6pt]
+    {\Large \tech{Full Stack Developer}} \\[6pt]
+    \faIcon{at}~\href{mailto:alex@example.com}{alex@example.com}\hfill \faIcon{phone}~(555) 123-4567\hfill \faIcon{linkedin}~\href{https://www.linkedin.com/company/linkedin/}{linkedin.com/in/linkedin}\hfill \faIcon{github}~\href{https://github.com/github}{github}
+\end{center}
+
+% ===== Summary =====
+\section*{Summary}
+
+Creative developer with 10 years of experience in web and cloud technologies. Expertise in modern frameworks and cloud infrastructure. Proven ability to lead teams and deliver scalable solutions.
+
+% ===== Experience =====
+\section*{Experience}
+
+\experience{Lead Developer}{2022 -- present}{ExampleSoft}{}
+\hspace{0.5cm}\texttt{Python / Django / React / AWS / Docker / Kubernetes}
+\begin{itemize}
+    \item Leading a team of 8 developers to deliver SaaS products for global clients. Architected microservices and CI/CD pipelines. Mentored junior engineers.
+\end{itemize}
+
+\experience{Software Engineer}{2017 -- 2022}{Webify Inc.}{}
+\hspace{0.5cm}\texttt{Node.js / Express / Vue.js / MongoDB / Jenkins}
+\begin{itemize}
+    \item Developed REST APIs and modern web applications. Automated testing and deployment pipelines. Improved system performance by 40\%.
+\end{itemize}
+
+% ===== Education =====
+\section*{Education}
+\begin{itemize}
+    \item \tech{BSc} -- Wonderland University \hfill 2013 -- 2017
+    \textit{\small Computer Science}
+\end{itemize}
+
+% ===== Certifications =====
+\section*{Certifications}
+\begin{itemize}[nosep,leftmargin=*]
+    \item AWS Certified Solutions Architect -- Amazon Web Services \hfill 2023
+         (ID: AWS-12345678)
+    \item Kubernetes Application Developer -- Linux Foundation \hfill 2022
+         (ID: LFCD-2022-001)
+\end{itemize}
+
+% ===== Honours & Awards =====
+\section*{Honours \& Awards}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Developer of the Year -- Webify Inc. \hfill 2021
+    \item Open Source Contributor Award -- Tech Community Alliance \hfill 2023
+\end{itemize}
+
+% ===== Technical Skills =====
+\section*{Technical Skills}
+\textbf{Backend Languages:} Python, JavaScript/Node.js, Go, Java \\
+\textbf{Frontend Frameworks:} React, Vue.js, Angular, TypeScript \\
+\textbf{Cloud \& DevOps:} AWS, Google Cloud, Docker, Kubernetes, Terraform \\
+\textbf{Databases:} PostgreSQL, MongoDB, Redis, DynamoDB \\
+
+% ===== Projects =====
+\section*{Projects}
+\textbf{Real-time Analytics Dashboard} \hfill 2023 \\
+Built a high-performance dashboard processing 1M+ events daily using React and Kafka. \\
+\textcolor{secondary}{\textbf{Technologies:}} React, Node.js, Kafka, PostgreSQL \\
+
+\textbf{Microservices Framework} \hfill 2021 -- present \\
+Open-source framework for building scalable microservices with built-in observability. \\
+\textcolor{secondary}{\textbf{Technologies:}} Go, gRPC, Docker \\
+
+% ===== Volunteer Experience =====
+\section*{Volunteer Experience}
+\textbf{Technical Mentor} \hfill 2020 -- present \\
+\textit{Code for Good} \\
+Mentoring junior developers from underrepresented backgrounds. Led workshops on cloud architecture and DevOps practices. \\
+
+% ===== Publications =====
+\section*{Publications}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Scaling Microservices: Best Practices and Pitfalls (Dev.to) \hfill 2023
+    \item Kubernetes in Production: Lessons Learned (Medium) \hfill 2022
+\end{itemize}
+
+% ===== Languages =====
+\section*{Languages}
+\begin{itemize}
+    \item \textbf{English} -- native
+    \item \textbf{Spanish} -- intermediate
+    \item \textbf{Mandarin} -- beginner
+\end{itemize}
+
+% ===== Professional Memberships =====
+\section*{Professional Memberships}
+\begin{itemize}[nosep,leftmargin=*]
+    \item ACM (Member) \hfill 2018 -- present
+    \item Cloud Native Computing Foundation (Member) \hfill 2021 -- present
+\end{itemize}
+
+% ===== Portfolio =====
+\section*{Portfolio}
+\faIcon{github}~\href{https://github.com/github}{GitHub Portfolio}\\
+\faIcon{globe}~\href{https://google.com}{Personal Website}\\
+
+\end{document}

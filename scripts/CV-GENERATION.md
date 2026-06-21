@@ -1,227 +1,247 @@
 # CV Generation Guide
 
-Generate professional CVs from JSON in multiple formats and styles.
+Generate CVs from a single JSON source into PDF, LaTeX, Markdown, HTML, DOCX, and plain text.
+
+You can run the scripts from outside the `scripts/` folder, use a JSON file anywhere on disk, and send the generated outputs to any directory you choose.
+
+This document reflects the scripts currently present in this repo. It was validated against a synthetic test resume, `jimbo-resume.json`, on 2026-06-21.
+
+## What Exists in This Repo
+
+Supported scripts in `scripts/`:
+
+- `build-cv.ps1` and `build-cv.bat`
+- `json2pdf.py`
+- `json2tex.py`
+- `json2md.py`
+- `json2html.py`
+- `json2docx.py`
+- `json2txt.py`
+
+There is currently one supported PDF style: the article-style pipeline driven by `json2tex.py` and `json2pdf.py`.
 
 ## Quick Start
 
-**Windows Explorer:** Double-click `build-cv.bat` (activates venv automatically)
+### From the repo root
 
-**PowerShell:**
 ```powershell
-# Build everything (all formats, article style PDF)
-.\build-cv.ps1
+# PowerShell entrypoint requires explicit input and output paths
+.\scripts\build-cv.ps1 -InputJson .\scripts\jhoar-resume.json -OutputDir .\formatted
 
-# Specify custom JSON file
-.\build-cv.ps1 -InputJson jhoar-resume.json
+# Build from a specific JSON file in scripts/
+.\scripts\build-cv.ps1 -InputJson jhoar-resume.json -OutputDir .\formatted
 
-# Custom input and output basename
-.\build-cv.ps1 -InputJson jhoar-resume.json -BaseName my-cv
+# Build from the synthetic process-test resume
+.\scripts\build-cv.ps1 -InputJson jimbo-resume.json -OutputDir .\formatted -BaseName jimbo-resume
+
+# Build from any JSON path and write outputs to any directory
+.\scripts\build-cv.ps1 -InputJson .\scripts\jimbo-resume.json -OutputDir .\tmp\cv-out -BaseName external-run
 ```
 
-**Direct Python calls:**
-```bash
-# Article style PDF (recommended)
-python json2pdf.py jhoar-resume.json
+### From the `scripts/` directory
 
-# Developer style PDF
-python json2pdf-developer.py jhoar-resume.json
-
-# LaTeX only (either style)
-python json2tex.py jhoar-resume.json
-python json2tex-developer.py jhoar-resume.json
+```powershell
+.\build-cv.ps1 -InputJson .\jhoar-resume.json -OutputDir ..\formatted
+.\build-cv.ps1 -InputJson jhoar-resume.json -OutputDir ..\formatted
+.\build-cv.ps1 -InputJson jimbo-resume.json -OutputDir ..\formatted -BaseName jimbo-resume
+.\build-cv.ps1 -InputJson C:\Resumes\candidate.json -OutputDir C:\Resumes\build -BaseName candidate
 ```
 
-## Output Formats
+With no `-InputJson`, `build-cv.ps1` now stops with an explicit `InputJson is required` error.
+With no `-OutputDir`, `build-cv.ps1` now stops with an explicit `OutputDir is required` error.
 
-| Format | Description |
-|--------|-------------|
-| PDF | Professional formatted document |
-| LaTeX | Source code for customization |
-| Markdown | Plain text with markup |
-| HTML | Web-friendly version |
-| DOCX | Microsoft Word document |
-| TXT | Plain text |
+### Batch File Default
 
-## Styles
+`build-cv.bat` is the convenience wrapper for the repository's default resume.
 
-### Article Style (Modern, Recommended)
-Clean, professional typography with proper section spacing. No squished headings.
+When you run it with no arguments, it builds `jhoar-resume.json` and writes outputs to `formatted/`.
 
-**Features:**
-- ✅ Uses standard `article` LaTeX class
-- ✅ Proper `\titleformat` and `\titlespacing` control
-- ✅ Professional section hierarchy
-- ✅ Consistent spacing throughout
-- ✅ FontAwesome icons with colors
+If you pass arguments to the batch file, they are forwarded to `build-cv.ps1`.
 
-**Generate:**
+### Path Behavior
+
+`build-cv.ps1` now resolves relative `-InputJson` and `-OutputDir` paths from your current working directory, so you can call it naturally from outside `scripts/`.
+
+Examples from the repo root:
+
+```powershell
+.\scripts\build-cv.ps1 -InputJson .\scripts\jimbo-resume.json -OutputDir .\tmp\cv-out
+```
+
+Examples with absolute paths anywhere on disk:
+
+```powershell
+.\scripts\build-cv.ps1 -InputJson C:\Users\you\Documents\resume.json -OutputDir D:\CVs\exports -BaseName tailored-resume
+```
+
+`build-cv.ps1` does not have a default output directory. Pass `-OutputDir` explicitly.
+
+## Direct Python Calls
+
+These commands work from any current directory as long as you point at the script file correctly.
+
 ```bash
+# PDF (also writes an intermediate .tex file)
+python c:\Users\linux\source\repos\career\scripts\json2pdf.py c:\path\to\resume.json c:\path\to\output\resume.pdf
+
 # LaTeX only
-python json2tex.py jhoar-resume.json
+python c:\Users\linux\source\repos\career\scripts\json2tex.py c:\path\to\resume.json c:\path\to\output\resume.tex
 
-# PDF (includes LaTeX as intermediate)
-python json2pdf.py jhoar-resume.json
+# Markdown
+python c:\Users\linux\source\repos\career\scripts\json2md.py c:\path\to\resume.json c:\path\to\output\resume.md
 
-# PDF with custom output path
-python json2pdf.py jhoar-resume.json output.pdf
-```
+# HTML
+python c:\Users\linux\source\repos\career\scripts\json2html.py c:\path\to\resume.json c:\path\to\output\resume.html
 
-### Developer CV Style (Classic)
-Traditional developer CV template from LaTeX Templates. More compact.
+# DOCX
+python c:\Users\linux\source\repos\career\scripts\json2docx.py c:\path\to\resume.json c:\path\to\output\resume.docx
 
-**Features:**
-- Traditional CV layout
-- Color-coded boxes and sections
-- Compact, single-page optimized
-- Uses `developercv` LaTeX class
-
-**Generate:**
-```bash
-# LaTeX only
-python json2tex-developer.py jhoar-resume.json
-
-# PDF
-python json2pdf-developer.py jhoar-resume.json
-
-# PDF with custom output path
-python json2pdf-developer.py jhoar-resume.json output.pdf
-```
-
-## Generation Scripts
-
-### LaTeX Generators
-
-**json2tex.py** — Article Style LaTeX (Recommended)
-```bash
-python json2tex.py input.json [output.tex]
-```
-Generates LaTeX using `article` class (modern, well-spaced).
-
-**json2tex-developer.py** — Developer CV Style LaTeX
-```bash
-python json2tex-developer.py input.json [output.tex]
-```
-Generates LaTeX using `developercv` class (compact, traditional).
-
-### PDF Generators
-
-**json2pdf.py** — Article Style PDF (Recommended)
-```bash
-python json2pdf.py input.json [output.pdf]
-```
-Generates LaTeX + compiles to PDF in one step using article class.
-Also generates intermediate `.tex` file for reference.
-
-**json2pdf-developer.py** — Developer CV Style PDF
-```bash
-python json2pdf-developer.py input.json [output.pdf]
-```
-Generates LaTeX + compiles to PDF using developercv class.
-Also generates intermediate `.tex` file for reference.
-
-### Other Formats
-
-**json2md.py** — Markdown
-```bash
-python json2md.py input.json [output.md]
-```
-
-**json2html.py** — HTML
-```bash
-python json2html.py input.json [output.html]
-```
-
-**json2docx.py** — Word Document
-```bash
-python json2docx.py input.json [output.docx]
-```
-
-**json2txt.py** — Plain Text
-```bash
-python json2txt.py input.json [output.txt]
+# Plain text
+python c:\Users\linux\source\repos\career\scripts\json2txt.py c:\path\to\resume.json c:\path\to\output\resume.txt
 ```
 
 ## Build Pipeline
 
-**build-cv.ps1** generates all formats from a single JSON file:
+`build-cv.ps1` generates:
 
-```powershell
-# Default (uses JSON with matching name in scripts/)
-.\build-cv.ps1
+- Markdown
+- HTML
+- plain text
+- PDF
+- DOCX
 
-# Specify JSON file
-.\build-cv.ps1 -InputJson jhoar-resume.json
+The PDF step also creates an intermediate `.tex` file beside the PDF output.
 
-# Specify JSON and output basename
-.\build-cv.ps1 -InputJson jhoar-resume.json -BaseName my-cv
+Parameters:
+
+- `-InputJson` required path to a JSON file anywhere on disk
+- `-OutputDir` required directory for all generated outputs
+- `-BaseName` optional filename stem for all generated outputs
+
+Typical output files for `-OutputDir formatted -BaseName jimbo-resume`:
+
+- `formatted/jimbo-resume.md`
+- `formatted/jimbo-resume.html`
+- `formatted/jimbo-resume.txt`
+- `formatted/jimbo-resume.pdf`
+- `formatted/jimbo-resume.docx`
+- `formatted/jimbo-resume.tex`
+
+Typical output files for `-OutputDir C:\CVs\build -BaseName tailored-resume`:
+
+- `C:\CVs\build\tailored-resume.md`
+- `C:\CVs\build\tailored-resume.html`
+- `C:\CVs\build\tailored-resume.txt`
+- `C:\CVs\build\tailored-resume.pdf`
+- `C:\CVs\build\tailored-resume.docx`
+- `C:\CVs\build\tailored-resume.tex`
+
+## JSON Schema in Practice
+
+There is no separate schema file in this repo right now. Use these files as the contract:
+
+- `jhoar-resume.json` for a real example
+- `jimbo-resume.json` for a synthetic process-test example that exercises more optional sections
+
+Common top-level fields:
+
+- `name`
+- `title`
+- `contact`
+- `summary`
+- `ai_expertise`
+- `experience`
+- `education`
+- `certifications`
+- `awards`
+- `skills`
+- `projects`
+- `volunteer`
+- `publications`
+- `languages`
+- `memberships`
+- `portfolio`
+- `published_games`
+- `section_order`
+- `section_filter`
+
+### Recommended Shape for Reliable Cross-Format Output
+
+For the smoothest results across all current converters:
+
+- Prefer `experience` over `teaching_experience` or `industry_experience`
+- Prefer `bullets` arrays for experience entries
+- Treat `description` on experience entries as legacy compatibility, not the main path
+- Keep optional fields genuinely optional; missing sections are skipped cleanly
+
+## Section Ordering and Filtering
+
+All current generators respect `section_order` and `section_filter`.
+
+### `section_order`
+
+Provide an array of section names in the order you want rendered.
+Only the listed sections are considered.
+
+```json
+{
+  "name": "Jane Doe",
+  "section_order": ["summary", "skills", "experience", "education"]
+}
 ```
 
-**Output directory:** `../formatted/`
+### `section_filter`
 
-**Files generated:**
-- `basename.pdf` (article style, default)
-- `basename.tex` (article style LaTeX)
-- `basename.md`
-- `basename.html`
-- `basename.docx`
-- `basename.txt`
+Provide an array of section names to suppress.
 
-### Batch Script
-
-**build-cv.bat** — Windows batch wrapper (double-click friendly)
-
-Activates virtual environment and runs `build-cv.ps1` with automatic pausing for error display.
-
-## Choosing a Style
-
-| If you want... | Use... |
-|---|---|
-| Modern, professionally spaced CV | `json2pdf.py` (recommended) |
-| Traditional developer CV template | `json2pdf-developer.py` |
-| Just LaTeX (no PDF compilation) | `json2tex.py` or `json2tex-developer.py` |
-| Everything at once | `build-cv.ps1` |
-| Double-click build | `build-cv.bat` |
-
-## JSON Schema
-
-Both styles use the same JSON schema. See [JSON2PDF.md](JSON2PDF.md) for full schema documentation.
-
-## LaTeX Customization
-
-Both generators create intermediate `.tex` files you can customize:
-
-**Article style** (generated by `json2pdf.py`):
-- Search and replace colors in preamble
-- Adjust margins via `\geometry{}`
-- Modify section spacing via `\titlespacing{}`
-
-**Developer style** (generated by `json2pdf-developer.py`):
-- Edit `developercv.cls` for template changes
-- Customize colors in JSON escape handling
-- See `developercv.cls` for structure
-
-Then compile manually:
-```bash
-pdflatex -interaction=nonstopmode -jobname basename -output-directory . basename.tex
+```json
+{
+  "name": "Jane Doe",
+  "section_filter": ["published_games", "volunteer"]
+}
 ```
+
+You can combine both fields. The synthetic `jimbo-resume.json` does this to prove the behavior end to end.
+
+Default section order when `section_order` is omitted:
+
+1. Summary
+2. AI Expertise
+3. Experience
+4. Education
+5. Certifications
+6. Awards
+7. Skills
+8. Projects
+9. Volunteer
+10. Publications
+11. Languages
+12. Memberships
+13. Portfolio
+14. Published Games
+
+## LaTeX and PDF Notes
+
+`json2tex.py` generates article-style LaTeX using:
+
+- `article`
+- `geometry`
+- `titlesec`
+- `hyperref`
+- `fontawesome5`
+- `raleway`
+
+`json2pdf.py` calls `json2tex.py`, then runs `pdflatex` and removes `.aux`, `.log`, and `.out` artifacts after a successful compile.
+
+If you want to customize the PDF styling, edit the generated `.tex` file or the Python generator.
 
 ## Requirements
 
-- Python 3.6+
-- `pdflatex` for PDF generation (install MiKTeX, TeX Live, or MacTeX)
-- Virtual environment with dependencies installed
+- Python 3.7+
+- `pdflatex` on `PATH`
+- `python-docx` installed in the interpreter used by the build script
 
-## Requirements & Setup
-
-### System Requirements
-
-| Tool | Purpose | Install |
-|------|---------|---------|
-| Python 3.7+ | Run build scripts | [python.org](https://python.org) |
-| MiKTeX or TeX Live | PDF generation | [miktex.org](https://miktex.org) or [tug.org](https://tug.org/texlive) |
-| python-docx | Generate Word documents | Auto-installed in `.venv` |
-
-### Verify Installation
+Verify setup:
 
 ```powershell
 python --version
@@ -229,150 +249,82 @@ pdflatex --version
 pip show python-docx
 ```
 
-### Virtual Environment
+The build script prefers:
 
-This repo uses a local `.venv` to isolate Python dependencies:
+1. the active virtual environment
+2. `repo/.venv/Scripts/python.exe`
+3. `python` or `py` on `PATH`
 
-```powershell
-# Automatic (scripts find it automatically)
-.\build-cv.ps1
+## Directory Structure
 
-# Manual activation
-.\.venv\Scripts\Activate.ps1
-cd scripts
-python json2pdf.py input.json
-```
-
-The `.venv` contains:
-- `python-docx` for Word document generation
-- All standard library modules needed for JSON/Markdown/HTML generation
-
-### Directory Structure
-
-```
+```text
 career/
-├── scripts/
-│   ├── build-cv.ps1           # Main build script
-│   ├── build-cv.bat           # Windows batch wrapper
-│   ├── json2pdf.py            # Article style: JSON → LaTeX → PDF (primary)
-│   ├── json2pdf-developer.py  # Developer style: JSON → LaTeX → PDF
-│   ├── json2tex.py            # Article style: JSON → LaTeX (primary)
-│   ├── json2tex-developer.py  # Developer style: JSON → LaTeX
-│   ├── json2md.py             # JSON → Markdown
-│   ├── json2html.py           # JSON → HTML
-│   ├── json2docx.py           # JSON → Word
-│   ├── json2txt.py            # JSON → Plain Text
-│   ├── jhoar-resume.json      # Example CV data
-│   ├── developercv.cls        # LaTeX class file (developer style)
-│   └── CV-GENERATION.md       # This file
-├── formatted/                  # Output directory
-│   ├── *.pdf
-│   ├── *.tex
-│   ├── *.md
-│   ├── *.html
-│   ├── *.docx
-│   └── *.txt
-└── .venv/                      # Virtual environment (auto-created)
+|-- formatted/
+|-- scripts/
+|   |-- build-cv.bat
+|   |-- build-cv.ps1
+|   |-- CV-GENERATION.md
+|   |-- jhoar-resume.json
+|   |-- jimbo-resume.json
+|   |-- json2docx.py
+|   |-- json2html.py
+|   |-- json2md.py
+|   |-- json2pdf.py
+|   |-- json2tex.py
+|   `-- json2txt.py
+`-- .venv/
 ```
-
-## Customizing the Resume
-
-Edit your JSON file with sections for:
-- `name` — Full name
-- `title` — Job title / tagline
-- `contact` — Email, phone, LinkedIn, GitHub, location
-- `summary` — Professional summary
-- `ai_expertise` — AI tools and practices (optional)
-- `teaching_experience` — Teaching roles with descriptions and tech stack
-- `industry_experience` — Industry jobs with descriptions and tech stack
-- `education` — Degrees and institutions
-- `awards` — Awards and honors
-- `publications` — Academic publications (optional)
-- `skills` — Technical skills by category
-- `work_samples` — Portfolio links (optional)
-
-See `jhoar-resume.json` for a complete example.
 
 ## Troubleshooting
 
-### "pdflatex not found"
+### `pdflatex not found`
 
-**Solution:** Install LaTeX distribution
-- **Windows:** [MiKTeX](https://miktex.org) (recommended) or [TeX Live](https://tug.org/texlive)
-- **macOS:** [MacTeX](https://tug.org/mactex) or Homebrew: `brew install mactex-basic`
-- **Linux:** `sudo apt install texlive-latex-base texlive-fonts-recommended`
+Install MiKTeX or TeX Live and ensure `pdflatex` is on `PATH`.
 
-Then add to PATH if needed:
+Windows example:
+
 ```powershell
-# Windows example (adjust path as needed)
 $env:PATH += ";C:\Program Files\MiKTeX\miktex\bin\x64"
 ```
 
-### "JSON parsing error"
+### `Input JSON not found`
 
-**Solution:** Validate JSON syntax
-```bash
-python -m json.tool input.json
+Check that the path is correct relative to your current working directory, or pass an absolute path.
+
+Examples:
+
+```powershell
+.\scripts\build-cv.ps1 -InputJson .\scripts\jimbo-resume.json
+.\scripts\build-cv.ps1 -InputJson C:\Users\you\Documents\resume.json
 ```
 
-### "PDF compilation failed"
+### `python-docx not found`
 
-**Solution:** Check LaTeX output
-1. Re-run with verbose output to see error messages
-2. Check intermediate `.tex` file for syntax issues
-3. Ensure all required LaTeX packages are installed (usually automatic with full MiKTeX/TeX Live installation)
+Install it into the same interpreter the build script will use:
 
-### "python-docx not found"
-
-**Solution:** Install in virtual environment
 ```powershell
 .\.venv\Scripts\Activate.ps1
 pip install python-docx
 ```
 
-### "Virtual environment not found"
+### PDF compilation failed
 
-**Solution:** Re-create it
+Check the generated `.tex` file in `formatted/` and rerun `pdflatex` manually if needed:
+
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install python-docx
+pdflatex -interaction=nonstopmode -output-directory formatted formatted\jhoar-resume.tex
 ```
 
-## Advanced: Manual PDF Compilation
+## Process-Test Example
 
-To compile LaTeX directly (e.g., after editing):
+`jimbo-resume.json` was added to help test process and documentation rather than resume content.
 
-```bash
-pdflatex -interaction=nonstopmode -output-directory=. filename.tex
-```
+It intentionally exercises:
 
-Clean up auxiliary files:
-```bash
-del *.aux *.log *.out
-```
+- multiple experience entries
+- most optional sections
+- `section_order`
+- `section_filter`
+- all supported output formats through `build-cv.ps1`
 
-## Performance
-
-Typical generation times:
-- JSON parse: < 10ms
-- LaTeX generation: 10–50ms
-- PDF compilation: 1–3 seconds
-- Full build (all 6 formats): 5–10 seconds
-
-## FAQ
-
-**Q: Can I use both styles at once?**
-A: Yes! Generate both in separate directories or with different basenames.
-
-**Q: Why does developer style PDF look different?**
-A: It uses `developercv` LaTeX class (compact, traditional), while article style uses standard `article` class (modern, well-spaced).
-
-**Q: Can I customize colors?**
-A: Yes, both LaTeX sources can be edited. For article style, edit colors in the preamble. For developer style, edit `developercv.cls`.
-
-**Q: How do I make a one-page resume?**
-A: Reduce text in experience/education sections. Both styles optimize for single-page layout when content is concise.
-
-**Q: Can I version control the JSON?**
-A: Absolutely! JSON is human-readable and git-friendly. Store in version control, generate outputs to `.gitignore`.
+Use it when you want to validate the pipeline without touching a real resume.

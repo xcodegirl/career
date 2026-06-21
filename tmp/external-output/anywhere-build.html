@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jimbo Calder - Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Raleway, sans-serif;
+  background: #f8f9fa;
+  color: #1e1e1e;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px 48px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+  font-size: 2.5em;
+  margin: 0 0 0.3em 0;
+  font-weight: 600;
+  color: #0a3c5a;
+  letter-spacing: -0.5px;
+}
+.title {
+  font-size: 1.15em;
+  color: #555;
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+h2 {
+  border-bottom: 2.5px solid #0a3c5a;
+  padding-bottom: 0.4em;
+  margin: 1.8em 0 0.8em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #0a3c5a;
+}
+h3 {
+  margin: 0.8em 0 0.3em 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  font-size: 0.95em;
+}
+.contact-list li { color: #555; }
+.section {
+  margin-bottom: 1.8em;
+}
+ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+li {
+  margin-bottom: 0.35em;
+  line-height: 1.5;
+}
+em {
+  color: #666;
+  font-style: italic;
+}
+strong { color: #0a3c5a; }
+a {
+  color: #0a3c5a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10,60,90,0.3);
+  transition: all 0.2s;
+}
+a:hover {
+  border-bottom-color: #0a3c5a;
+  color: #1e1e1e;
+}
+@media (max-width: 600px) {
+  .container { padding: 24px; }
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.1em; }
+  .contact-list { flex-direction: column; gap: 0.5em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Jimbo Calder</h1>
+<div style="font-size:1.2em; color:#444; margin-bottom:0.7em;">Senior Platform Engineer and Technical Mentor</div>
+<ul class="contact-list">
+<li>📍 Halifax, NS</li>
+<li>📞 +1-555-0134</li>
+<li>✉️ <a href="mailto:jimbo.calder@example.test">jimbo.calder@example.test</a></li>
+<li><a href="https://linkedin.com/in/jimbo-calder">LinkedIn</a></li>
+<li><a href="https://github.com/jimbocalder">GitHub</a></li>
+</ul>
+<div class="section">
+<h2>Summary</h2>
+<p>Platform engineer with 12 years of experience building internal developer tooling, cloud automation, and resilient delivery pipelines for product teams in fintech, health tech, and public-sector environments. Known for making complicated systems operable, writing clear technical documentation, and mentoring engineers across backend, infrastructure, and release workflows.</p>
+</div>
+<div class="section">
+<h2>Skills</h2>
+<div><strong>Languages:</strong>
+Python, Go, TypeScript, SQL, PowerShell</div>
+<div><strong>Cloud and DevOps:</strong>
+Azure, GitHub Actions, Terraform, Docker, Kubernetes</div>
+<div><strong>Practices:</strong>
+Incident response, Observability, Technical mentoring, Architecture reviews</div>
+</div>
+<div class="section">
+<h2>Experience</h2>
+<h3>Senior Platform Engineer <span style="font-weight:normal;">- Northshore Pay Systems</span></h3>
+<div><em>2022 -- present</em></div>
+<ul>
+<li style="margin-left: 1em;"><code>Python</code> / <code>Azure</code> / <code>Terraform</code> / <code>GitHub Actions</code> / <code>PostgreSQL</code></li>
+<li>Led migration from hand-managed cloud resources to Terraform modules used by six delivery teams.</li>
+<li>Cut failed deployment recovery time by introducing reusable rollout and rollback workflows.</li>
+<li>Built internal documentation and office-hour processes that reduced platform support interruptions during releases.</li>
+</ul>
+<h3>DevOps Engineer <span style="font-weight:normal;">- Maple Harbor Health</span></h3>
+<div><em>2018 -- 2022</em></div>
+<ul>
+<li style="margin-left: 1em;"><code>Go</code> / <code>Kubernetes</code> / <code>Helm</code> / <code>Prometheus</code> / <code>Grafana</code></li>
+<li>Implemented cluster observability dashboards and alert tuning for patient-facing services.</li>
+<li>Standardized service templates so new teams could ship production-ready APIs with fewer manual steps.</li>
+<li>Partnered with developers to convert brittle shell automation into tested Go utilities.</li>
+</ul>
+<h3>Software Developer <span style="font-weight:normal;">- Civic Ledger Labs</span></h3>
+<div><em>2014 -- 2018</em></div>
+<ul>
+<li style="margin-left: 1em;"><code>TypeScript</code> / <code>Node.js</code> / <code>SQL Server</code> / <code>Azure DevOps</code></li>
+<li>Delivered workflow tools for records management and service intake across municipal departments.</li>
+<li>Introduced pull-request templates and release notes conventions that improved auditability.</li>
+<li>Mentored junior developers on debugging, testing strategy, and maintainable API design.</li>
+</ul>
+</div>
+<div class="section">
+<h2>Projects</h2>
+<h3>Runbook Navigator (2025)</h3>
+<p>Prototype assistant that indexes platform runbooks and links answers back to source documentation for support staff.</p>
+<div><strong>Technologies:</strong> Python, Azure AI Search, Markdown</div>
+<div><a href="https://example.test/runbook-navigator">View Project</a></div>
+<h3>Release Scorecard (2024)</h3>
+<p>Internal dashboard that summarizes change risk, test coverage signals, and rollback readiness before production deployments.</p>
+<div><strong>Technologies:</strong> TypeScript, PostgreSQL, Power BI</div>
+</div>
+<div class="section">
+<h2>Education</h2>
+<h3>Master of Applied Computing - Dalhousie University</h3>
+<div><em>2012 -- 2014</em></div>
+<div>Field: Distributed Systems</div>
+<div>Thesis: <em>Operational Patterns for Small-Team Cloud Platforms</em></div>
+<h3>Bachelor of Computer Science - Saint Mary&#39;s University</h3>
+<div><em>2008 -- 2012</em></div>
+<div>Field: Software Engineering</div>
+</div>
+<div class="section">
+<h2>Certifications</h2>
+<ul>
+<li><strong>Microsoft Certified: Azure Administrator Associate</strong> - Microsoft (2024) - ID: AZA-445812</li>
+<li><strong>CKA: Certified Kubernetes Administrator</strong> - The Linux Foundation (2023)</li>
+</ul>
+</div>
+<div class="section">
+<h2>Awards</h2>
+<ul>
+<li>Engineering Enablement Award, Northshore Pay Systems, 2025</li>
+</ul>
+</div>
+<div class="section">
+<h2>Languages</h2>
+<ul>
+<li>English: Native</li>
+<li>French: Professional working proficiency</li>
+</ul>
+</div>
+<div class="section">
+<h2>Professional Memberships</h2>
+<ul>
+<li><strong>CNCF Halifax Meetup</strong> (Volunteer Organizer) - 2023 -- present</li>
+</ul>
+</div>
+<div class="section">
+<h2>Portfolio</h2>
+<ul>
+<li><a href="https://example.test/jimbo-writing">Platform Writing Samples</a></li>
+<li><a href="https://github.com/jimbocalder/automation-lab">Automation Lab</a></li>
+</ul>
+</div>
+<div class="section">
+<h2>AI Expertise</h2>
+<div><strong>Daily practice:</strong>
+<ul>
+<li>Uses code assistants to draft infrastructure changes, then reviews diffs and failure modes before merge.</li>
+<li>Builds retrieval-backed internal support bots over runbooks and incident records.</li>
+<li>Automates repetitive triage summaries for on-call handoff notes and deployment reviews.</li>
+</ul></div>
+<div><strong>What I teach about AI:</strong>
+<ul>
+<li>Teaches prompt hygiene, source validation, and safe use of AI output in engineering teams.</li>
+<li>Runs workshops on using AI to accelerate debugging without skipping root-cause analysis.</li>
+</ul></div>
+<div><strong>AI and assessment design (from training):</strong>
+<ul>
+<li>Designs team guidelines for acceptable AI use in take-home assessments and documentation tasks.</li>
+</ul></div>
+</div>
+<div class="section">
+<h2>Volunteer Experience</h2>
+<h3>Mentor</h3>
+<div><strong>Atlantic Tech Connect</strong> - <em>2021 -- present</em></div>
+<p>Mentors career changers on cloud fundamentals, portfolio projects, and technical interview preparation.</p>
+</div>
+<div class="section">
+<h2>Publications</h2>
+<ul>
+<li><a href="https://example.test/deployment-anxiety">Reducing Deployment Anxiety with Better Operational Feedback</a> - East Coast DevOps Notes, 2024</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

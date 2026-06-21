@@ -4,7 +4,7 @@ REM Double-click this file to generate all CV formats.
 
 setlocal enabledelayedexpansion
 
-set VENV_DIR=%~dp0..\\.venv
+set VENV_DIR=%~dp0.venv
 
 if exist "%VENV_DIR%\Scripts\activate.bat" (
     echo Activating virtual environment...
@@ -15,7 +15,11 @@ if exist "%VENV_DIR%\Scripts\activate.bat" (
 )
 
 echo.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0build-cv.ps1"
+if "%~1"=="" (
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\build-cv.ps1" -InputJson "%~dp0jhoar-resume.json" -OutputDir "%~dp0."
+) else (
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\build-cv.ps1" %*
+)
 
 if !errorlevel! neq 0 (
     echo.
@@ -24,7 +28,7 @@ if !errorlevel! neq 0 (
 ) else (
     echo.
     echo Build completed successfully!
-    echo Output is in: "%~dp0..\formatted\"
+    echo Check the PowerShell output above for the exact output paths.
     pause
 )
 

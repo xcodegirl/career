@@ -3,6 +3,10 @@ vcpkg_installed/
 out/
 build/
 .vs/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 **/privatecontact**.tex
 **/*.aux
 **/*.log

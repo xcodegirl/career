@@ -1,0 +1,176 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.7in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{moresize}
+\usepackage{fontawesome5}
+\usepackage[default]{raleway}
+\usepackage{multicol}
+
+% Colour scheme
+\definecolor{accent}{RGB}{10,60,90}
+\definecolor{secondary}{RGB}{30,30,30}
+
+% Font and layout
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\newcommand{\mytitle}[1]{\color{accent}\normalfont\large\bfseries{#1}}
+\newcommand{\tech}[1]{\textcolor{secondary}{\textbf{#1}}}
+
+% Section style
+\titleformat{\section}{\mytitle}{}{0em}{}[{\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+% Bullet list formatting
+\setlist[itemize]{leftmargin=*,nosep,after=\vspace{3pt}}
+\setlist[itemize]{label=\color{accent}\scriptsize\raisebox{0.4ex}{\textbullet}}
+
+% Custom macros
+\newcommand{\experience}[4]{%
+  \vspace{4pt}
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#2} \\
+    \textit{\small#3} & \textit{\small#4}
+  \end{tabular*}
+  \vspace{-4pt}
+}
+
+\begin{document}
+
+% ===== Header =====
+\begin{center}
+\colorbox{gray}{\HUGE\textcolor{white}{\textbf{Jimbo}}} \\[2pt]
+\colorbox{gray}{\HUGE\textcolor{white}{\textbf{Calder}}} \\[6pt]
+    {\Large \tech{Senior Platform Engineer and Technical Mentor}} \\[6pt]
+    \faIcon{at}~\href{mailto:jimbo.calder@example.test}{jimbo.calder@example.test}\hfill \faIcon{phone}~+1-555-0134\hfill \faIcon{linkedin}~\href{https://linkedin.com/in/jimbo-calder}{linkedin.com/in/jimbo-calder}\hfill \faIcon{github}~\href{https://github.com/jimbocalder}{jimbocalder}
+    \\[2pt]
+    \textit{Halifax, NS}~\textbullet~\textit{Remote}
+\end{center}
+
+% ===== Summary =====
+\section*{Summary}
+
+Platform engineer with 12 years of experience building internal developer tooling, cloud automation, and resilient delivery pipelines for product teams in fintech, health tech, and public-sector environments. Known for making complicated systems operable, writing clear technical documentation, and mentoring engineers across backend, infrastructure, and release workflows.
+
+% ===== Technical Skills =====
+\section*{Technical Skills}
+\textbf{Languages:} Python, Go, TypeScript, SQL, PowerShell \\
+\textbf{Cloud and DevOps:} Azure, GitHub Actions, Terraform, Docker, Kubernetes \\
+\textbf{Practices:} Incident response, Observability, Technical mentoring, Architecture reviews \\
+
+% ===== Experience =====
+\section*{Experience}
+
+\experience{Senior Platform Engineer}{2022 -- present}{Northshore Pay Systems}{}
+\hspace{0.5cm}\texttt{Python / Azure / Terraform / GitHub Actions / PostgreSQL}
+\begin{itemize}
+    \item Led migration from hand-managed cloud resources to Terraform modules used by six delivery teams.
+    \item Cut failed deployment recovery time by introducing reusable rollout and rollback workflows.
+    \item Built internal documentation and office-hour processes that reduced platform support interruptions during releases.
+\end{itemize}
+
+\experience{DevOps Engineer}{2018 -- 2022}{Maple Harbor Health}{}
+\hspace{0.5cm}\texttt{Go / Kubernetes / Helm / Prometheus / Grafana}
+\begin{itemize}
+    \item Implemented cluster observability dashboards and alert tuning for patient-facing services.
+    \item Standardized service templates so new teams could ship production-ready APIs with fewer manual steps.
+    \item Partnered with developers to convert brittle shell automation into tested Go utilities.
+\end{itemize}
+
+\experience{Software Developer}{2014 -- 2018}{Civic Ledger Labs}{}
+\hspace{0.5cm}\texttt{TypeScript / Node.js / SQL Server / Azure DevOps}
+\begin{itemize}
+    \item Delivered workflow tools for records management and service intake across municipal departments.
+    \item Introduced pull-request templates and release notes conventions that improved auditability.
+    \item Mentored junior developers on debugging, testing strategy, and maintainable API design.
+\end{itemize}
+
+% ===== Projects =====
+\section*{Projects}
+\textbf{Runbook Navigator} \hfill 2025 \\
+Prototype assistant that indexes platform runbooks and links answers back to source documentation for support staff. \\
+\textcolor{secondary}{\textbf{Technologies:}} Python, Azure AI Search, Markdown \\
+
+\textbf{Release Scorecard} \hfill 2024 \\
+Internal dashboard that summarizes change risk, test coverage signals, and rollback readiness before production deployments. \\
+\textcolor{secondary}{\textbf{Technologies:}} TypeScript, PostgreSQL, Power BI \\
+
+% ===== Education =====
+\section*{Education}
+\begin{itemize}
+    \item \tech{Master of Applied Computing} -- Dalhousie University \hfill 2012 -- 2014
+    \textit{\small Distributed Systems}
+    \textit{\small Thesis: Operational Patterns for Small-Team Cloud Platforms}
+    \item \tech{Bachelor of Computer Science} -- Saint Mary's University \hfill 2008 -- 2012
+    \textit{\small Software Engineering}
+\end{itemize}
+
+% ===== Certifications =====
+\section*{Certifications}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Microsoft Certified: Azure Administrator Associate -- Microsoft \hfill 2024
+         (ID: AZA-445812)
+    \item CKA: Certified Kubernetes Administrator -- The Linux Foundation \hfill 2023
+\end{itemize}
+
+% ===== Honours & Awards =====
+\section*{Honours \& Awards}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Engineering Enablement Award -- Northshore Pay Systems \hfill 2025
+\end{itemize}
+
+% ===== Languages =====
+\section*{Languages}
+\begin{itemize}
+    \item \textbf{English} -- Native
+    \item \textbf{French} -- Professional working proficiency
+\end{itemize}
+
+% ===== Professional Memberships =====
+\section*{Professional Memberships}
+\begin{itemize}[nosep,leftmargin=*]
+    \item CNCF Halifax Meetup (Volunteer Organizer) \hfill 2023 -- present
+\end{itemize}
+
+% ===== Portfolio =====
+\section*{Portfolio}
+\faIcon{globe}~\href{https://example.test/jimbo-writing}{Platform Writing Samples}\\
+\faIcon{github}~\href{https://github.com/jimbocalder/automation-lab}{Automation Lab}\\
+
+% ===== AI Expertise =====
+\section*{AI Expertise}
+
+\textbf{Daily practice:}
+\begin{itemize}
+    \item Uses code assistants to draft infrastructure changes, then reviews diffs and failure modes before merge.
+    \item Builds retrieval-backed internal support bots over runbooks and incident records.
+    \item Automates repetitive triage summaries for on-call handoff notes and deployment reviews.
+\end{itemize}
+
+\textbf{What I teach about AI:}
+\begin{itemize}
+    \item Teaches prompt hygiene, source validation, and safe use of AI output in engineering teams.
+    \item Runs workshops on using AI to accelerate debugging without skipping root-cause analysis.
+\end{itemize}
+
+\textbf{AI and assessment design (from training):}
+\begin{itemize}
+    \item Designs team guidelines for acceptable AI use in take-home assessments and documentation tasks.
+\end{itemize}
+
+% ===== Volunteer Experience =====
+\section*{Volunteer Experience}
+\textbf{Mentor} \hfill 2021 -- present \\
+\textit{Atlantic Tech Connect} \\
+Mentors career changers on cloud fundamentals, portfolio projects, and technical interview preparation. \\
+
+% ===== Publications =====
+\section*{Publications}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Reducing Deployment Anxiety with Better Operational Feedback (East Coast DevOps Notes) \hfill 2024
+\end{itemize}
+
+\end{document}

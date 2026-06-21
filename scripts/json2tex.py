@@ -63,6 +63,7 @@ def add_document_setup(lines):
     lines.append('\\usepackage[hidelinks]{hyperref}')
     lines.append('\\usepackage{xcolor}')
     lines.append('\\usepackage{ragged2e}')
+    lines.append('\\usepackage{moresize}')
     lines.append('\\usepackage{fontawesome5}')
     lines.append('\\usepackage[default]{raleway}')
     lines.append('\\usepackage{multicol}')
@@ -114,8 +115,10 @@ def add_header_section(lines, resume_data):
 
     name_parts = resume_data["name"].split()
     if name_parts:
-        first_last = ' '.join(name_parts)
-        lines.append(f'    {{\\Huge \\textbf{{{escape_latex(first_last)}}}}} \\\\[4pt]')
+        first = escape_latex(name_parts[0]) if name_parts else ""
+        last = escape_latex(name_parts[-1]) if len(name_parts) > 1 else ""
+        lines.append(f'\\colorbox{{gray}}{{\\HUGE\\textcolor{{white}}{{\\textbf{{{first}}}}}}} \\\\[2pt]')
+        lines.append(f'\\colorbox{{gray}}{{\\HUGE\\textcolor{{white}}{{\\textbf{{{last}}}}}}} \\\\[6pt]')
 
     if resume_data.get("title"):
         lines.append(f'    {{\\Large \\tech{{{escape_latex(resume_data["title"])}}}}} \\\\[6pt]')
@@ -216,24 +219,25 @@ def add_experience_section(lines, resume_data):
         title = escape_latex(job["title"])
         dates = escape_latex(job.get("date", "") or job.get("dates", ""))
         company = escape_latex(job.get("company", ""))
-        description = job.get("description", "")
+
+        # Support both new "bullets" field and legacy "description" field
+        bullets = job.get("bullets", []) or job.get("description", "")
 
         lines.append(f'\\experience{{{title}}}{{{dates}}}{{{company}}}{{}}')
 
-        if description:
-            lines.append('\\begin{itemize}')
-            # Handle both string and list descriptions.
-            if isinstance(description, str):
-                lines.append(f'    \\item {escape_latex(description)}')
-            else:
-                for desc in description:
-                    lines.append(f'    \\item {escape_latex(desc)}')
-            lines.append('\\end{itemize}')
-
         if job.get("technologies"):
             techs = job["technologies"]
-            tech_str = ' \\textbullet\\ '.join([f'\\tech{{{escape_latex(t)}}}' for t in techs])
-            lines.append(f'\\textbf{{{tech_str}}}')
+            tech_str = ' / '.join([escape_latex(t) for t in techs])
+            lines.append(f'\\hspace{{0.5cm}}\\texttt{{{tech_str}}}')
+
+        if bullets:
+            lines.append('\\begin{itemize}')
+            if isinstance(bullets, str):
+                lines.append(f'    \\item {escape_latex(bullets)}')
+            else:
+                for bullet in bullets:
+                    lines.append(f'    \\item {escape_latex(bullet)}')
+            lines.append('\\end{itemize}')
 
         lines.append('')
 
@@ -480,6 +484,55 @@ def add_memberships_section(lines, resume_data):
 
 
 # =====================================================================
+# SECTION MAPPING AND ORDERING
+# =====================================================================
+
+SECTION_BUILDERS = {
+    'summary': add_summary_section,
+    'ai_expertise': add_ai_expertise_section,
+    'experience': add_experience_section,
+    'education': add_education_section,
+    'certifications': add_certifications_section,
+    'awards': add_awards_section,
+    'skills': add_skills_section,
+    'projects': add_projects_section,
+    'volunteer': add_volunteer_section,
+    'publications': add_publications_section,
+    'languages': add_languages_section,
+    'memberships': add_memberships_section,
+    'portfolio': add_portfolio_section,
+    'published_games': add_published_games_section,
+}
+
+DEFAULT_SECTION_ORDER = [
+    'summary',
+    'ai_expertise',
+    'experience',
+    'education',
+    'certifications',
+    'awards',
+    'skills',
+    'projects',
+    'volunteer',
+    'publications',
+    'languages',
+    'memberships',
+    'portfolio',
+    'published_games',
+]
+
+
+def build_sections(lines, resume_data):
+    """Build sections in order specified by JSON, respecting filters."""
+    section_order = resume_data.get('section_order', DEFAULT_SECTION_ORDER)
+    section_filter = set(resume_data.get('section_filter', []))
+
+    for section_name in section_order:
+        if section_name not in section_filter and section_name in SECTION_BUILDERS:
+            SECTION_BUILDERS[section_name](lines, resume_data)
+
+
+# =====================================================================
 # MAIN ENTRY POINT
 # =====================================================================
 
@@ -499,20 +552,7 @@ def main():
     lines.append('\\begin{document}')
     lines.append('')
     add_header_section(lines, resume_data)
-    add_summary_section(lines, resume_data)
-    add_ai_expertise_section(lines, resume_data)
-    add_experience_section(lines, resume_data)
-    add_education_section(lines, resume_data)
-    add_certifications_section(lines, resume_data)
-    add_awards_section(lines, resume_data)
-    add_skills_section(lines, resume_data)
-    add_projects_section(lines, resume_data)
-    add_volunteer_section(lines, resume_data)
-    add_publications_section(lines, resume_data)
-    add_languages_section(lines, resume_data)
-    add_memberships_section(lines, resume_data)
-    add_portfolio_section(lines, resume_data)
-    add_published_games_section(lines, resume_data)
+    build_sections(lines, resume_data)
     lines.append('\\end{document}')
 
     if os.path.exists(output_path):

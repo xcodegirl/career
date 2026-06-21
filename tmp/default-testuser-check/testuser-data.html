@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alex Example - Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Raleway, sans-serif;
+  background: #f8f9fa;
+  color: #1e1e1e;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px 48px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+  font-size: 2.5em;
+  margin: 0 0 0.3em 0;
+  font-weight: 600;
+  color: #0a3c5a;
+  letter-spacing: -0.5px;
+}
+.title {
+  font-size: 1.15em;
+  color: #555;
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+h2 {
+  border-bottom: 2.5px solid #0a3c5a;
+  padding-bottom: 0.4em;
+  margin: 1.8em 0 0.8em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #0a3c5a;
+}
+h3 {
+  margin: 0.8em 0 0.3em 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  font-size: 0.95em;
+}
+.contact-list li { color: #555; }
+.section {
+  margin-bottom: 1.8em;
+}
+ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+li {
+  margin-bottom: 0.35em;
+  line-height: 1.5;
+}
+em {
+  color: #666;
+  font-style: italic;
+}
+strong { color: #0a3c5a; }
+a {
+  color: #0a3c5a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10,60,90,0.3);
+  transition: all 0.2s;
+}
+a:hover {
+  border-bottom-color: #0a3c5a;
+  color: #1e1e1e;
+}
+@media (max-width: 600px) {
+  .container { padding: 24px; }
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.1em; }
+  .contact-list { flex-direction: column; gap: 0.5em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Alex Example</h1>
+<div style="font-size:1.2em; color:#444; margin-bottom:0.7em;">Full Stack Developer</div>
+<ul class="contact-list">
+<li>📞 (555) 123-4567</li>
+<li>✉️ <a href="mailto:alex@example.com">alex@example.com</a></li>
+<li><a href="https://www.linkedin.com/company/linkedin/">LinkedIn</a></li>
+<li><a href="https://github.com/github">GitHub</a></li>
+</ul>
+<div class="section">
+<h2>Summary</h2>
+<p>Creative developer with 10 years of experience in web and cloud technologies. Expertise in modern frameworks and cloud infrastructure. Proven ability to lead teams and deliver scalable solutions.</p>
+</div>
+<div class="section">
+<h2>Experience</h2>
+<h3>Lead Developer <span style="font-weight:normal;">- ExampleSoft</span></h3>
+<div><em>2022 -- present</em></div>
+<ul>
+<li style="margin-left: 1em;"><code>Python</code> / <code>Django</code> / <code>React</code> / <code>AWS</code> / <code>Docker</code> / <code>Kubernetes</code></li>
+</ul>
+<h3>Software Engineer <span style="font-weight:normal;">- Webify Inc.</span></h3>
+<div><em>2017 -- 2022</em></div>
+<ul>
+<li style="margin-left: 1em;"><code>Node.js</code> / <code>Express</code> / <code>Vue.js</code> / <code>MongoDB</code> / <code>Jenkins</code></li>
+</ul>
+</div>
+<div class="section">
+<h2>Education</h2>
+<h3>BSc - Wonderland University</h3>
+<div><em>2013 -- 2017</em></div>
+<div>Field: Computer Science</div>
+</div>
+<div class="section">
+<h2>Certifications</h2>
+<ul>
+<li><strong>AWS Certified Solutions Architect</strong> - Amazon Web Services (2023) - ID: AWS-12345678</li>
+<li><strong>Kubernetes Application Developer</strong> - Linux Foundation (2022) - ID: LFCD-2022-001</li>
+</ul>
+</div>
+<div class="section">
+<h2>Awards</h2>
+<ul>
+<li>Developer of the Year, Webify Inc., 2021</li>
+<li>Open Source Contributor Award, Tech Community Alliance, 2023</li>
+</ul>
+</div>
+<div class="section">
+<h2>Skills</h2>
+<div><strong>Backend Languages:</strong>
+Python, JavaScript/Node.js, Go, Java</div>
+<div><strong>Frontend Frameworks:</strong>
+React, Vue.js, Angular, TypeScript</div>
+<div><strong>Cloud &amp; DevOps:</strong>
+AWS, Google Cloud, Docker, Kubernetes, Terraform</div>
+<div><strong>Databases:</strong>
+PostgreSQL, MongoDB, Redis, DynamoDB</div>
+</div>
+<div class="section">
+<h2>Projects</h2>
+<h3>Real-time Analytics Dashboard (2023)</h3>
+<p>Built a high-performance dashboard processing 1M+ events daily using React and Kafka.</p>
+<div><strong>Technologies:</strong> React, Node.js, Kafka, PostgreSQL</div>
+<div><a href="https://github.com/exampledev/analytics-dashboard">View Project</a></div>
+<h3>Microservices Framework (2021 -- present)</h3>
+<p>Open-source framework for building scalable microservices with built-in observability.</p>
+<div><strong>Technologies:</strong> Go, gRPC, Docker</div>
+<div><a href="https://github.com/exampledev/micro-framework">View Project</a></div>
+</div>
+<div class="section">
+<h2>Volunteer Experience</h2>
+<h3>Technical Mentor</h3>
+<div><strong>Code for Good</strong> - <em>2020 -- present</em></div>
+<p>Mentoring junior developers from underrepresented backgrounds. Led workshops on cloud architecture and DevOps practices.</p>
+</div>
+<div class="section">
+<h2>Publications</h2>
+<ul>
+<li><a href="https://dev.to/alexexample/scaling-microservices">Scaling Microservices: Best Practices and Pitfalls</a> - Dev.to, 2023</li>
+<li><a href="https://medium.com/@alexexample/k8s-lessons">Kubernetes in Production: Lessons Learned</a> - Medium, 2022</li>
+</ul>
+</div>
+<div class="section">
+<h2>Languages</h2>
+<ul>
+<li>English: native</li>
+<li>Spanish: intermediate</li>
+<li>Mandarin: beginner</li>
+</ul>
+</div>
+<div class="section">
+<h2>Professional Memberships</h2>
+<ul>
+<li><strong>ACM</strong> (Member) - 2018 -- present</li>
+<li><strong>Cloud Native Computing Foundation</strong> (Member) - 2021 -- present</li>
+</ul>
+</div>
+<div class="section">
+<h2>Portfolio</h2>
+<ul>
+<li><a href="https://github.com/github">GitHub Portfolio</a></li>
+<li><a href="https://google.com">Personal Website</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>

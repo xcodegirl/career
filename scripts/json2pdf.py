@@ -24,6 +24,17 @@ def find_pdflatex():
     return pdflatex_path
 
 
+def remove_if_unlocked(file_path):
+    """Best-effort cleanup for LaTeX temp files that may be open elsewhere."""
+    if not os.path.exists(file_path):
+        return
+
+    try:
+        os.remove(file_path)
+    except OSError as exc:
+        print(f"Warning: could not remove temporary file {file_path}: {exc}")
+
+
 def compile_latex_to_pdf(tex_file, pdf_file, scripts_dir):
     """Compile LaTeX source to PDF using pdflatex."""
     temp_dir = os.path.dirname(tex_file)
@@ -55,8 +66,7 @@ def compile_latex_to_pdf(tex_file, pdf_file, scripts_dir):
         # Clean up temporary LaTeX build artifacts.
         for suffix in ['aux', 'log', 'out']:
             aux_file = os.path.join(temp_dir, f'{job_name}.{suffix}')
-            if os.path.exists(aux_file):
-                os.remove(aux_file)
+            remove_if_unlocked(aux_file)
 
         print(f"Generated PDF: {pdf_file}")
 

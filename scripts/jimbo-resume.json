@@ -1,0 +1,178 @@
+{
+  "name": "Jimbo Calder",
+  "title": "Senior Platform Engineer and Technical Mentor",
+  "contact": {
+    "email": "jimbo.calder@example.test",
+    "phone": "+1-555-0134",
+    "linkedin": "https://linkedin.com/in/jimbo-calder",
+    "github": "https://github.com/jimbocalder",
+    "location": "Halifax, NS"
+  },
+  "summary": "Platform engineer with 12 years of experience building internal developer tooling, cloud automation, and resilient delivery pipelines for product teams in fintech, health tech, and public-sector environments. Known for making complicated systems operable, writing clear technical documentation, and mentoring engineers across backend, infrastructure, and release workflows.",
+  "ai_expertise": {
+    "daily_practice": [
+      "Uses code assistants to draft infrastructure changes, then reviews diffs and failure modes before merge.",
+      "Builds retrieval-backed internal support bots over runbooks and incident records.",
+      "Automates repetitive triage summaries for on-call handoff notes and deployment reviews."
+    ],
+    "teaching": [
+      "Teaches prompt hygiene, source validation, and safe use of AI output in engineering teams.",
+      "Runs workshops on using AI to accelerate debugging without skipping root-cause analysis."
+    ],
+    "assessment": [
+      "Designs team guidelines for acceptable AI use in take-home assessments and documentation tasks."
+    ]
+  },
+  "section_order": [
+    "summary",
+    "skills",
+    "experience",
+    "projects",
+    "education",
+    "certifications",
+    "awards",
+    "languages",
+    "memberships",
+    "portfolio",
+    "ai_expertise",
+    "volunteer",
+    "publications",
+    "published_games"
+  ],
+  "section_filter": [
+    "published_games"
+  ],
+  "skills": {
+    "Languages": ["Python", "Go", "TypeScript", "SQL", "PowerShell"],
+    "Cloud and DevOps": ["Azure", "GitHub Actions", "Terraform", "Docker", "Kubernetes"],
+    "Practices": ["Incident response", "Observability", "Technical mentoring", "Architecture reviews"]
+  },
+  "experience": [
+    {
+      "date": "2022 -- present",
+      "title": "Senior Platform Engineer",
+      "company": "Northshore Pay Systems",
+      "technologies": ["Python", "Azure", "Terraform", "GitHub Actions", "PostgreSQL"],
+      "bullets": [
+        "Led migration from hand-managed cloud resources to Terraform modules used by six delivery teams.",
+        "Cut failed deployment recovery time by introducing reusable rollout and rollback workflows.",
+        "Built internal documentation and office-hour processes that reduced platform support interruptions during releases."
+      ]
+    },
+    {
+      "date": "2018 -- 2022",
+      "title": "DevOps Engineer",
+      "company": "Maple Harbor Health",
+      "technologies": ["Go", "Kubernetes", "Helm", "Prometheus", "Grafana"],
+      "bullets": [
+        "Implemented cluster observability dashboards and alert tuning for patient-facing services.",
+        "Standardized service templates so new teams could ship production-ready APIs with fewer manual steps.",
+        "Partnered with developers to convert brittle shell automation into tested Go utilities."
+      ]
+    },
+    {
+      "date": "2014 -- 2018",
+      "title": "Software Developer",
+      "company": "Civic Ledger Labs",
+      "technologies": ["TypeScript", "Node.js", "SQL Server", "Azure DevOps"],
+      "bullets": [
+        "Delivered workflow tools for records management and service intake across municipal departments.",
+        "Introduced pull-request templates and release notes conventions that improved auditability.",
+        "Mentored junior developers on debugging, testing strategy, and maintainable API design."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Runbook Navigator",
+      "date": "2025",
+      "description": "Prototype assistant that indexes platform runbooks and links answers back to source documentation for support staff.",
+      "technologies": ["Python", "Azure AI Search", "Markdown"],
+      "url": "https://example.test/runbook-navigator"
+    },
+    {
+      "title": "Release Scorecard",
+      "date": "2024",
+      "description": "Internal dashboard that summarizes change risk, test coverage signals, and rollback readiness before production deployments.",
+      "technologies": ["TypeScript", "PostgreSQL", "Power BI"]
+    }
+  ],
+  "education": [
+    {
+      "date": "2012 -- 2014",
+      "degree": "Master of Applied Computing",
+      "institution": "Dalhousie University",
+      "field": "Distributed Systems",
+      "thesis": "Operational Patterns for Small-Team Cloud Platforms"
+    },
+    {
+      "date": "2008 -- 2012",
+      "degree": "Bachelor of Computer Science",
+      "institution": "Saint Mary's University",
+      "field": "Software Engineering"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Microsoft Certified: Azure Administrator Associate",
+      "issuer": "Microsoft",
+      "date": "2024",
+      "credential_id": "AZA-445812"
+    },
+    {
+      "title": "CKA: Certified Kubernetes Administrator",
+      "issuer": "The Linux Foundation",
+      "date": "2023"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Engineering Enablement Award",
+      "organization": "Northshore Pay Systems",
+      "year": "2025"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Native"
+    },
+    {
+      "language": "French",
+      "proficiency": "Professional working proficiency"
+    }
+  ],
+  "memberships": [
+    {
+      "organization": "CNCF Halifax Meetup",
+      "title": "Volunteer Organizer",
+      "date": "2023 -- present"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Platform Writing Samples",
+      "url": "https://example.test/jimbo-writing"
+    },
+    {
+      "title": "Automation Lab",
+      "url": "https://github.com/jimbocalder/automation-lab"
+    }
+  ],
+  "volunteer": [
+    {
+      "title": "Mentor",
+      "organization": "Atlantic Tech Connect",
+      "date": "2021 -- present",
+      "description": "Mentors career changers on cloud fundamentals, portfolio projects, and technical interview preparation."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Reducing Deployment Anxiety with Better Operational Feedback",
+      "publication": "East Coast DevOps Notes",
+      "date": "2024",
+      "url": "https://example.test/deployment-anxiety"
+    }
+  ]
+}

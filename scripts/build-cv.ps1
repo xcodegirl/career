@@ -5,7 +5,8 @@
 
 param(
     [string]$InputJson,
-    [string]$BaseName
+    [string]$BaseName,
+    [string]$OutputDir
 )
 
 $ErrorActionPreference = 'Stop'
@@ -15,30 +16,10 @@ $ErrorActionPreference = 'Stop'
 #=========================================================================
 
 function Resolve-FilePath {
-    # Convert path to absolute, handling both relative and rooted paths.
+    # Convert path to absolute, resolving relative paths from caller cwd.
     param([string]$path)
 
-    if ([System.IO.Path]::IsPathRooted($path)) {
-        return [System.IO.Path]::GetFullPath($path)
-    }
-
-    return [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot $path))
-}
-
-
-function Find-ResumeJsonSource {
-    # Locate JSON resume file: error if missing or multiple candidates.
-    $jsonFiles = Get-ChildItem -Path $PSScriptRoot -Filter '*.json' -File | Where-Object { $_.Name -notlike 'testuser*' }
-
-    if ($jsonFiles.Count -eq 1) {
-        return $jsonFiles[0].FullName
-    }
-
-    if ($jsonFiles.Count -eq 0) {
-        throw 'No JSON resume source found in scripts/. Pass -InputJson explicitly.'
-    }
-
-    throw 'Multiple JSON files found in scripts/. Pass -InputJson explicitly.'
+    return $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($path)
 }
 
 
@@ -84,23 +65,28 @@ function Get-PythonExecutable {
 #=========================================================================
 
 # Resolve input and output paths.
-$inputPath = if ([string]::IsNullOrWhiteSpace($InputJson)) {
-    Find-ResumeJsonSource
-} else {
-    Resolve-FilePath $InputJson
+if ([string]::IsNullOrWhiteSpace($InputJson)) {
+    throw 'InputJson is required. Usage: .\build-cv.ps1 -InputJson path\to\resume.json -OutputDir path [-BaseName name]'
 }
+
+$inputPath = Resolve-FilePath $InputJson
 
 if (-not (Test-Path $inputPath)) {
     throw "Input JSON not found: $inputPath"
+}
+
+$repoRoot = Split-Path -Parent $PSScriptRoot
+$scriptsDir = $PSScriptRoot
+
+if ([string]::IsNullOrWhiteSpace($OutputDir)) {
+    throw 'OutputDir is required. Usage: .\build-cv.ps1 -InputJson path\to\resume.json -OutputDir path [-BaseName name]'
 }
 
 if ([string]::IsNullOrWhiteSpace($BaseName)) {
     $BaseName = [System.IO.Path]::GetFileNameWithoutExtension($inputPath)
 }
 
-$repoRoot = Split-Path -Parent $PSScriptRoot
-$outputDir = Join-Path $repoRoot 'formatted'
-$scriptsDir = $PSScriptRoot
+$outputDir = Resolve-FilePath $OutputDir
 
 # Ensure output directory exists.
 if (-not (Test-Path $outputDir)) {
