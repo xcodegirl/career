@@ -290,28 +290,29 @@ def main():
     lines.append(f"## {escape_markdown(resume_data['title'])}")
     lines.append("")
 
-    # Contact Info
+    # Contact Info — rendered as a single-row table so items sit side by side
     contact = resume_data.get('contact', {})
-    contact_lines = []
+    contact_cells = []
     if 'location' in contact:
-        contact_lines.append(f"- 📍 {escape_markdown(contact['location'])}")
+        contact_cells.append(f"📍 {escape_markdown(contact['location'])}")
     if 'email' in contact:
-        contact_lines.append(f"- ✉️ [{escape_markdown(contact['email'])}](mailto:{contact['email']})")
+        contact_cells.append(f"✉️ [{escape_markdown(contact['email'])}](mailto:{contact['email']})")
     if 'phone' in contact:
-        contact_lines.append(f"- 📞 {escape_markdown(contact['phone'])}")
+        contact_cells.append(f"📞 {escape_markdown(contact['phone'])}")
     if "linkedin" in contact:
         parts = [p for p in contact['linkedin'].split('/') if p]
         label = parts[-1] if parts else contact['linkedin']
-        contact_lines.append(f"- 💼 [linkedin.com/in/{escape_markdown(label)}]({contact['linkedin']})")
+        contact_cells.append(f"💼 [linkedin.com/in/{escape_markdown(label)}]({contact['linkedin']})")
     if "github" in contact:
         parts = [p for p in contact['github'].split('/') if p]
         label = parts[-1] if parts else contact['github']
-        contact_lines.append(f"- 🐙 [{escape_markdown(label)}]({contact['github']})")
+        contact_cells.append(f"🐙 [{escape_markdown(label)}]({contact['github']})")
     if "website" in contact:
-        contact_lines.append(f"- 🌐 [Website]({contact['website']})")
+        contact_cells.append(f"🌐 [Website]({contact['website']})")
 
-    if contact_lines:
-        lines.extend(contact_lines)
+    if contact_cells:
+        lines.append("| " + " | ".join(contact_cells) + " |")
+        lines.append("| " + " | ".join(":---:" for _ in contact_cells) + " |")
         lines.append("")
 
     # Build sections in order specified by JSON
