@@ -16,7 +16,7 @@ if exist "%VENV_DIR%\Scripts\activate.bat" (
 
 echo.
 if "%~1"=="" (
-    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\build-cv.ps1" -InputJson "%~dp0jhoar-resume.json" -OutputDir "%~dp0."
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\build-cv.ps1" -InputJson "%~dp0jhoar-resume.json" -OutputDir "%~dp0.\formatted"
 ) else (
     powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\build-cv.ps1" %*
 )
