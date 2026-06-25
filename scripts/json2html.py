@@ -439,9 +439,6 @@ def build_html_document(resume_data):
     if "github" in contact:
         url = escape_html(contact["github"])
         contact_items.append(f'<li><a href="{url}">GitHub</a></li>')
-    if "discord" in contact:
-        contact_items.append(f'<li>Discord: <code>{escape_html(contact["discord"])}</code></li>')
-
     if contact_items:
         lines.append('<ul class="contact-list">')
         lines.extend(contact_items)
