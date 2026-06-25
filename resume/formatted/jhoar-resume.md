@@ -12,52 +12,52 @@ Canadian Software Developer with 20 years of experience in video game programmin
 **Technology Instructor**, Robertson College (contract)
 Jan 2025 -- present
   `C#` / `.NET` / `ASP .NET Core` / `Java` / `JavaScript` / `React` / `Git` / `GitHub` / `Azure` / `SQL`
-- ['Instructed 20+ course offerings across Full Stack Development and Data Analytics diploma programs. Delivered live coding sessions, maintained open-source course materials on GitHub, and achieved an average student satisfaction rating of 4.5/5.0.']
+- Instructed 20+ course offerings across Full Stack Development and Data Analytics diploma programs. Delivered live coding sessions, maintained open-source course materials on GitHub, and achieved an average student satisfaction rating of 4.5/5.0.
 
 **Senior Software Developer**, bitHeads Inc.
 2022 -- 2025
   `Unreal Engine` / `C++` / `Objective-C` / `Swift` / `iOS` / `Android Native` / `Java` / `Kotlin` / `PlayStation` / `Xbox` / `Nintendo Switch` / `Node.js` / `Groovy` / `C#` / `Shell Script`
-- ['Developed and maintained cross-platform client SDKs for a backend-as-a-service platform used by 50+ published games across 12 platforms including PlayStation, Xbox, Nintendo Switch, iOS, and Android. Engineered CI/CD and TDD pipelines and managed customer relationships with AAA and Indie studios.']
+- Developed and maintained cross-platform client SDKs for a backend-as-a-service platform used by 50+ published games across 12 platforms including PlayStation, Xbox, Nintendo Switch, iOS, and Android. Engineered CI/CD and TDD pipelines and managed customer relationships with AAA and Indie studios.
 
 **Co-founder/ Lead Developer**, Silicon Hanna Inc. (self-employed)
 2011 -- 2022
   `Unreal Engine` / `Objective-C / Swift` / `iOS` / `Android Native` / `Kotlin` / `Augmented Reality` / `MacOS` / `Windows`
-- ['Designed, coded and published eleven mobile games for iOS and Android, from concept and game design through to commercial app-store release. Experimented with cutting-edge device technologies including ARKit and other emerging SDKs.']
+- Designed, coded and published eleven mobile games for iOS and Android, from concept and game design through to commercial app-store release. Experimented with cutting-edge device technologies including ARKit and other emerging SDKs.
 
 **Tools Programmer**, Fekete Associates Inc. (S&P Global)
 2008 -- 2011
   `C++` / `MFC` / `Windows` / `Perforce` / `Incredibuild`
-- ['Developed tools that used mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.']
+- Developed tools that used mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.
 
 **Intermediate Software Engineer**, BJ Pipeline Inspection Services Inc. (Baker Hughes)
 2005 -- 2008
   `C++` / `C` / `OpenGL` / `PHP` / `SQL` / `Neural Networks` / `Borland` / `Windows` / `Linux`
-- ['Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reporting software. Improved low-level programming algorithms for data processing.']
+- Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reporting software. Improved low-level programming algorithms for data processing.
 
 **Co-founder / App Developer / Instructor**, SuRJE Software Solutions Inc. (self-employed, contract)
 2005 -- 2008
   `Objective-C` / `C++` / `OpenGL` / `Chipmunk` / `PHP` / `JavaScript` / `Firebase` / `Google Maps` / `iOS` / `Linux`
-- ['Created and published physics-based games for iOS. Handled technical writing, web development, Google Maps and Firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with the Department of Continuing Education.']
+- Created and published physics-based games for iOS. Handled technical writing, web development, Google Maps and Firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with the Department of Continuing Education.
 
 **Software Researcher / Lead Developer**, PlayStarMusic Corp.
 2005 - 2006
   `C++` / `PHP` / `Javascript` / `.NET` / `Windows` / `Linux`
-- ['Led development and system administration for an iTunes-like music store. Automated DRM encoding and video streaming. Developed a prototype for a Google-competitive search engine.']
+- Led development and system administration for an iTunes-like music store. Automated DRM encoding and video streaming. Developed a prototype for a Google-competitive search engine.
 
 **Junior Software Engineer**, Codefast.com
 2004 - 2005
   `C++` / `Qt` / `Wx` / `Shell script` / `Windows` / `Unix`
-- ['Ported applications to operate under a new GUI library. Developed user interfaces for software lifecycle automation.']
+- Ported applications to operate under a new GUI library. Developed user interfaces for software lifecycle automation.
 
 **Web Developer / VR Artist**, Nickle Arts Museum, University of Calgary (contract)
 2002 -- 2004
   `JavaScript` / `C++` / `OpenGL` / `PHP` / `HTML` / `CSS` / `3D Scanning` / `VR`
-- ['Designed and developed an interactive online catalogue for the Gerald Hushlak art exhibit with JavaScript-based features. Contributed original generative art from graduate research. Collaborated on a pioneering VR installation using 3D scanning and CAVE immersion technology.']
+- Designed and developed an interactive online catalogue for the Gerald Hushlak art exhibit with JavaScript-based features. Contributed original generative art from graduate research. Collaborated on a pioneering VR installation using 3D scanning and CAVE immersion technology.
 
 **Research Assistant**, VLab Computer Graphics Group / Artificial Intelligence Research Hub
 2001 - 2004
   `C++` / `OpenGL` / `PHP` / `MySQL` / `Qt` / `Solaris` / `Unix` / `Linux`
-- ['Developed graphics software tools using fractal mathematics and biological modelling. Managed network setup and distributed computing infrastructure. Published five research papers and served as teaching assistant across three courses.']
+- Developed graphics software tools using fractal mathematics and biological modelling. Managed network setup and distributed computing infrastructure. Published five research papers and served as teaching assistant across three courses.
 
 ## Education
 **Master's Degree** in Computer Science

@@ -226,15 +226,18 @@ def add_experience_section(lines, resume_data):
             techs = job["technologies"]
             tech_str = ' / '.join([escape_latex(t) for t in techs])
             lines.append(f'\\hspace{{0.5cm}}\\texttt{{{tech_str}}}')
+            lines.append('')
 
         if job.get("description"):
-            lines.append(escape_latex(job["description"]))
-
+            lines.append(f'{escape_latex(job["description"])}')
+            lines.append('')
+        
         if job.get("bullets"):
             lines.append('\\begin{itemize}')
             for bullet in job["bullets"]:
                 lines.append(f'    \\item {escape_latex(bullet)}')
             lines.append('\\end{itemize}')
+            lines.append('')
 
         lines.append('')
 
