@@ -86,11 +86,11 @@ def add_experience_section(lines, resume_data):
     for job in resume_data["experience"]:
         lines.append(f"**{escape_markdown(job['title'])}**, {escape_markdown(job['company'])}")
         lines.append(f"{escape_markdown(job['date'])}")
-        if job.get("description"):
-            lines.append(f"- {escape_markdown(job['description'])}")
         if job.get("technologies"):
             tech_list = ' / '.join([f"`{escape_markdown(t)}`" for t in job["technologies"]])
-            lines.append(f"  _Technologies:_ {tech_list}")
+            lines.append(f"  {tech_list}")
+        if job.get("description"):
+            lines.append(f"- {escape_markdown(job['description'])}")
         if job.get("bullets"):
             for bullet in job["bullets"]:
                 lines.append(f"- {escape_markdown(bullet)}")

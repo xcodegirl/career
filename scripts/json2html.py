@@ -92,12 +92,12 @@ def add_experience_section(lines, resume_data):
         company = escape_html(job["company"])
         lines.append(f'<h3>{title} <span style="font-weight:normal;">- {company}</span></h3>')
         lines.append(f'<div><em>{escape_html(job["date"])}</em></div>')
+        if job.get("technologies"):
+            techs = " / ".join([f"<code>{escape_html(t)}</code>" for t in job["technologies"]])
+            lines.append(f'<p>{techs}</p>')
         if job.get("description"):
             lines.append(f'<p>{escape_html(job["description"])}</p>')
         lines.append('<ul>')
-        if job.get("technologies"):
-            techs = " / ".join([f"<code>{escape_html(t)}</code>" for t in job["technologies"]])
-            lines.append(f'<li><strong>Technologies:</strong> {techs}</li>')
         if job.get("bullets"):
             for bullet in job["bullets"]:
                 lines.append(f'<li>{escape_html(bullet)}</li>')

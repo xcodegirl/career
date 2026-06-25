@@ -96,11 +96,11 @@ def add_experience_section(lines, resume_data):
         company = escape_text(job['company'])
         lines.append(f"{title} | {company}")
         lines.append(escape_text(job['date']))
-        if job.get('description'):
-            lines.append(escape_text(job['description']))
         if job.get('technologies'):
             techs = ' / '.join(escape_text(t) for t in job['technologies'])
-            lines.append(f'  Technologies: {techs}')
+            lines.append(f'  {techs}')
+        if job.get('description'):
+            lines.append(escape_text(job['description']))
         if job.get('bullets'):
             for bullet in job['bullets']:
                 lines.append(f"  * {escape_text(bullet)}")

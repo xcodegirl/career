@@ -100,16 +100,16 @@ def add_experience_section(doc, resume_data):
             date_run.font.size = Pt(10)
             date_run.font.color.rgb = RGBColor(100, 100, 100)
 
-        if job.get("description"):
-            desc_para = doc.add_paragraph(job.get("description"), style='List Bullet 2')
-            desc_para.paragraph_format.left_indent = Inches(0.5)
-
         if job.get("technologies"):
             tech_para = doc.add_paragraph(style='List Bullet 2')
             tech_para.paragraph_format.left_indent = Inches(0.5)
             tech_run = tech_para.add_run("Technologies: ")
             tech_run.bold = True
             tech_para.add_run(" / ".join(job["technologies"]))
+
+        if job.get("description"):
+            desc_para = doc.add_paragraph(job.get("description"), style='List Bullet 2')
+            desc_para.paragraph_format.left_indent = Inches(0.5)
 
         if job.get("bullets"):
             for bullet in job["bullets"]:
