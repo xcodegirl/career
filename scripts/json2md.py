@@ -77,7 +77,7 @@ def add_experience_section(lines, resume_data):
             tech_list = ' / '.join([f"`{escape_markdown(t)}`" for t in job["technologies"]])
             lines.append(f"  {tech_list}")
         if job.get("description"):
-            lines.append(f"- {escape_markdown(job['description'])}")
+            lines.append(f"{escape_markdown(job['description'])}")
         if job.get("bullets"):
             for bullet in job["bullets"]:
                 lines.append(f"- {escape_markdown(bullet)}")
@@ -90,8 +90,12 @@ def add_education_section(lines, resume_data):
         return
     lines.append("## Education")
     for school in resume_data["education"]:
-        lines.append(f"**{escape_markdown(school['degree'])}** in {escape_markdown(school['field'])}")
+        field = escape_markdown(school.get('field', ''))
+        field_str = f" in {field}" if field else ""
+        lines.append(f"**{escape_markdown(school['degree'])}**{field_str}")
         lines.append(f"_{escape_markdown(school['institution'])}_ — {escape_markdown(school['date'])}")
+        if school.get('thesis'):
+            lines.append(f"Thesis: _{escape_markdown(school['thesis'])}_")
         lines.append("")
 
 
@@ -107,6 +111,8 @@ def add_certifications_section(lines, resume_data):
         issuer_str = f" - {issuer}" if issuer else ""
         date_str = f" ({date})" if date else ""
         lines.append(f"- **{title}**{issuer_str}{date_str}")
+        if cert.get('credential_id'):
+            lines.append(f"  ID: {escape_markdown(cert['credential_id'])}")
     lines.append("")
 
 
@@ -286,6 +292,8 @@ def main():
     # Contact Info
     contact = resume_data.get('contact', {})
     contact_lines = []
+    if 'location' in contact:
+        contact_lines.append(f"- 📍 {escape_markdown(contact['location'])}")
     if 'email' in contact:
         contact_lines.append(f"- ✉️ [{escape_markdown(contact['email'])}](mailto:{contact['email']})")
     if 'phone' in contact:
