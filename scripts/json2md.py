@@ -2,9 +2,9 @@
 Generate Markdown resume from JSON source.
 Usage: python json2md.py input.json [output.md]
 """
-import json
-import os
 import sys
+
+from resume_builder_common import get_output_path, load_resume_json, build_sections
 
 
 def escape_markdown(text):
@@ -16,19 +16,6 @@ def escape_markdown(text):
     text = text.replace('–', '-').replace('—', '--')
     text = text.replace('|', '\\|')
     return text
-
-
-def get_output_path(json_path, output_arg):
-    """Determine output file path: use provided arg or derive from input."""
-    if output_arg:
-        return output_arg
-    return os.path.splitext(json_path)[0] + '.md'
-
-
-def load_resume_json(json_path):
-    """Read and parse resume JSON file."""
-    with open(json_path, encoding='utf-8') as file_handle:
-        return json.load(file_handle)
 
 
 def write_resume(output_path, lines):
@@ -280,41 +267,13 @@ SECTION_BUILDERS = {
     'published_games': add_published_games_section,
 }
 
-DEFAULT_SECTION_ORDER = [
-    'summary',
-    'ai_expertise',
-    'experience',
-    'education',
-    'certifications',
-    'awards',
-    'skills',
-    'projects',
-    'volunteer',
-    'publications',
-    'languages',
-    'memberships',
-    'portfolio',
-    'published_games',
-]
-
-
-def build_sections(lines, resume_data):
-    """Build sections in order specified by JSON, respecting filters."""
-    section_order = resume_data.get('section_order', DEFAULT_SECTION_ORDER)
-    section_filter = set(resume_data.get('section_filter', []))
-
-    for section_name in section_order:
-        if section_name not in section_filter and section_name in SECTION_BUILDERS:
-            SECTION_BUILDERS[section_name](lines, resume_data)
-
-
 def main():
     if len(sys.argv) < 2:
         print("Usage: python json2md.py input.json [output.md]")
         sys.exit(1)
 
     json_path = sys.argv[1]
-    output_path = get_output_path(json_path, sys.argv[2] if len(sys.argv) > 2 else None)
+    output_path = get_output_path(json_path, sys.argv[2] if len(sys.argv) > 2 else None, '.md')
 
     resume_data = load_resume_json(json_path)
     lines = []
@@ -344,7 +303,7 @@ def main():
         lines.append("")
 
     # Build sections in order specified by JSON
-    build_sections(lines, resume_data)
+    build_sections(lines, resume_data, SECTION_BUILDERS)
 
     write_resume(output_path, lines)
     print(f"Wrote Markdown resume to: {output_path}")
