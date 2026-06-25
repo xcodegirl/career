@@ -266,7 +266,8 @@ def add_portfolio_section(lines, resume_data):
     for item in resume_data["portfolio"]:
         title = escape_html(item["title"])
         url = escape_html(item["url"])
-        lines.append(f'<li><a href="{url}">{title}</a></li>')
+        icon_class = "fa-brands fa-github" if "github.com" in item["url"] else "fa-solid fa-globe"
+        lines.append(f'<li><i class="{icon_class} fa-icon"></i><a href="{url}">{title}</a></li>')
     lines.append('</ul>')
     lines.append('</div>')
 
@@ -321,6 +322,7 @@ def build_html_document(resume_data):
     lines.append('<meta charset="UTF-8">')
     lines.append(f'<title>{escape_html(resume_data["name"])} - Resume</title>')
     lines.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
+    lines.append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">')
     lines.append('<style>')
 
     # Stylesheet: match PDF aesthetic (Raleway-inspired, accent color scheme)
@@ -402,6 +404,7 @@ def build_html_document(resume_data):
         '  border-bottom-color: #0a3c5a;',
         '  color: #1e1e1e;',
         '}',
+        '.fa-icon { margin-right: 0.35em; color: #0a3c5a; font-size: 0.9em; }',
         '@media (max-width: 600px) {',
         '  .container { padding: 24px; }',
         '  h1 { font-size: 1.8em; }',
@@ -427,18 +430,21 @@ def build_html_document(resume_data):
     contact = resume_data.get('contact', {})
     contact_items = []
     if "location" in contact:
-        contact_items.append(f'<li>📍 {escape_html(contact["location"])}</li>')
+        contact_items.append(f'<li><i class="fa-solid fa-location-dot fa-icon"></i>{escape_html(contact["location"])}</li>')
     if "phone" in contact:
-        contact_items.append(f'<li>📞 {escape_html(contact["phone"])}</li>')
+        contact_items.append(f'<li><i class="fa-solid fa-phone fa-icon"></i>{escape_html(contact["phone"])}</li>')
     if "email" in contact:
         email = escape_html(contact["email"])
-        contact_items.append(f'<li>✉️ <a href="mailto:{email}">{email}</a></li>')
+        contact_items.append(f'<li><i class="fa-solid fa-at fa-icon"></i><a href="mailto:{email}">{email}</a></li>')
     if "linkedin" in contact:
         url = escape_html(contact["linkedin"])
-        contact_items.append(f'<li><a href="{url}">LinkedIn</a></li>')
+        contact_items.append(f'<li><i class="fa-brands fa-linkedin fa-icon"></i><a href="{url}">LinkedIn</a></li>')
     if "github" in contact:
         url = escape_html(contact["github"])
-        contact_items.append(f'<li><a href="{url}">GitHub</a></li>')
+        contact_items.append(f'<li><i class="fa-brands fa-github fa-icon"></i><a href="{url}">GitHub</a></li>')
+    if "website" in contact:
+        url = escape_html(contact["website"])
+        contact_items.append(f'<li><i class="fa-solid fa-globe fa-icon"></i><a href="{url}">Website</a></li>')
     if contact_items:
         lines.append('<ul class="contact-list">')
         lines.extend(contact_items)
