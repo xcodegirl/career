@@ -130,14 +130,15 @@ def add_header_section(lines, resume_data):
         label = parts[-1] if parts else url
         contact_items.append(f'\\faIcon{{github}}~\\href{{{escape_latex(url)}}}{{{escape_latex(label)}}}')
 
+    lines.append('\\end{center}')
+
     if contact_items:
-        lines.append('    ' + '\\hfill '.join(contact_items))
+        lines.append('\\noindent ' + ' \\enspace|\\enspace '.join(contact_items))
+        lines.append('')
 
     if contact.get("location"):
-        lines.append(f'    \\\\[2pt]')
-        lines.append(f'    \\textit{{{escape_latex(contact["location"])}}}~\\textbullet~\\textit{{Remote}}')
+        lines.append(f'\\noindent\\textit{{{escape_latex(contact["location"])}}}~\\textbullet~\\textit{{Remote}}')
 
-    lines.append('\\end{center}')
     lines.append('')
 
 
@@ -246,8 +247,10 @@ def add_education_section(lines, resume_data):
         field = school.get("field")
         thesis = school.get("thesis")
         if field:
+            lines.append('')
             lines.append(f'    \\textit{{\\small {escape_latex(field)}}}')
         if thesis:
+            lines.append('')
             lines.append(f'    \\textit{{\\small Thesis: {escape_latex(thesis)}}}')
 
         if school.get("details"):
