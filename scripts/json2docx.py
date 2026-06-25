@@ -11,9 +11,35 @@ try:
     from docx import Document
     from docx.shared import Pt, RGBColor, Inches
     from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+    import docx.opc.constants
 except ImportError:
     print("Error: python-docx is required. Install with: pip install python-docx")
     sys.exit(1)
+
+
+def _add_hyperlink(paragraph, url, text):
+    """Embed a real Word hyperlink into an existing paragraph."""
+    r_id = paragraph.part.relate_to(
+        url, docx.opc.constants.RELATIONSHIP_TYPE.HYPERLINK, is_external=True
+    )
+    hyperlink = OxmlElement('w:hyperlink')
+    hyperlink.set(qn('r:id'), r_id)
+    r = OxmlElement('w:r')
+    rPr = OxmlElement('w:rPr')
+    color_el = OxmlElement('w:color')
+    color_el.set(qn('w:val'), '3D5AF1')
+    rPr.append(color_el)
+    u_el = OxmlElement('w:u')
+    u_el.set(qn('w:val'), 'single')
+    rPr.append(u_el)
+    r.append(rPr)
+    t = OxmlElement('w:t')
+    t.text = text
+    r.append(t)
+    hyperlink.append(r)
+    paragraph._p.append(hyperlink)
 
 
 def add_section_header(doc, title):
@@ -270,10 +296,7 @@ def add_portfolio_section(doc, resume_data):
     add_section_header(doc, "Portfolio")
     for item in resume_data["portfolio"]:
         port_para = doc.add_paragraph(style='List Bullet')
-        link_run = port_para.add_run(item.get('title', ''))
-        link_run.font.color.rgb = RGBColor(61, 90, 241)
-        link_run.underline = True
-        port_para.add_run(f" - {item.get('url', '')}")
+        _add_hyperlink(port_para, item.get('url', ''), item.get('title', ''))
 
 
 def add_published_games_section(doc, resume_data):
