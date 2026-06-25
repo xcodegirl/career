@@ -220,9 +220,6 @@ def add_experience_section(lines, resume_data):
         dates = escape_latex(job.get("date", "") or job.get("dates", ""))
         company = escape_latex(job.get("company", ""))
 
-        # Support both new "bullets" field and legacy "description" field
-        bullets = job.get("bullets", []) or job.get("description", "")
-
         lines.append(f'\\experience{{{title}}}{{{dates}}}{{{company}}}{{}}')
 
         if job.get("technologies"):
@@ -230,13 +227,13 @@ def add_experience_section(lines, resume_data):
             tech_str = ' / '.join([escape_latex(t) for t in techs])
             lines.append(f'\\hspace{{0.5cm}}\\texttt{{{tech_str}}}')
 
-        if bullets:
+        if job.get("description"):
+            lines.append(escape_latex(job["description"]))
+
+        if job.get("bullets"):
             lines.append('\\begin{itemize}')
-            if isinstance(bullets, str):
-                lines.append(f'    \\item {escape_latex(bullets)}')
-            else:
-                for bullet in bullets:
-                    lines.append(f'    \\item {escape_latex(bullet)}')
+            for bullet in job["bullets"]:
+                lines.append(f'    \\item {escape_latex(bullet)}')
             lines.append('\\end{itemize}')
 
         lines.append('')
