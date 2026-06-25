@@ -377,9 +377,13 @@ def build_resume_document(resume_data):
         if "location" in contact:
             contact_items.append(contact["location"])
         if "linkedin" in contact:
-            contact_items.append(contact["linkedin"].split("/")[-1])
+            parts = [p for p in contact["linkedin"].split('/') if p]
+            label = parts[-1] if parts else contact["linkedin"]
+            contact_items.append(f"linkedin.com/in/{label}")
         if "github" in contact:
-            contact_items.append(contact["github"].split("/")[-1])
+            parts = [p for p in contact["github"].split('/') if p]
+            label = parts[-1] if parts else contact["github"]
+            contact_items.append(label)
         contact_para.add_run(" | ".join(contact_items))
         contact_para.paragraph_format.space_before = Pt(6)
         contact_para.paragraph_format.space_after = Pt(12)

@@ -299,9 +299,13 @@ def main():
     if 'phone' in contact:
         contact_lines.append(f"- 📞 {escape_markdown(contact['phone'])}")
     if "linkedin" in contact:
-        contact_lines.append(f"- [LinkedIn]({contact['linkedin']})")
+        parts = [p for p in contact['linkedin'].split('/') if p]
+        label = parts[-1] if parts else contact['linkedin']
+        contact_lines.append(f"- [linkedin.com/in/{escape_markdown(label)}]({contact['linkedin']})")
     if "github" in contact:
-        contact_lines.append(f"- [GitHub]({contact['github']})")
+        parts = [p for p in contact['github'].split('/') if p]
+        label = parts[-1] if parts else contact['github']
+        contact_lines.append(f"- [{escape_markdown(label)}]({contact['github']})")
     if "website" in contact:
         contact_lines.append(f"- [Website]({contact['website']})")
 

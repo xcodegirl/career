@@ -438,10 +438,14 @@ def build_html_document(resume_data):
         contact_items.append(f'<li><i class="fa-solid fa-at fa-icon"></i><a href="mailto:{email}">{email}</a></li>')
     if "linkedin" in contact:
         url = escape_html(contact["linkedin"])
-        contact_items.append(f'<li><i class="fa-brands fa-linkedin fa-icon"></i><a href="{url}">LinkedIn</a></li>')
+        parts = [p for p in contact["linkedin"].split('/') if p]
+        label = escape_html(parts[-1] if parts else contact["linkedin"])
+        contact_items.append(f'<li><i class="fa-brands fa-linkedin fa-icon"></i><a href="{url}">linkedin.com/in/{label}</a></li>')
     if "github" in contact:
         url = escape_html(contact["github"])
-        contact_items.append(f'<li><i class="fa-brands fa-github fa-icon"></i><a href="{url}">GitHub</a></li>')
+        parts = [p for p in contact["github"].split('/') if p]
+        label = escape_html(parts[-1] if parts else contact["github"])
+        contact_items.append(f'<li><i class="fa-brands fa-github fa-icon"></i><a href="{url}">{label}</a></li>')
     if "website" in contact:
         url = escape_html(contact["website"])
         contact_items.append(f'<li><i class="fa-solid fa-globe fa-icon"></i><a href="{url}">Website</a></li>')
