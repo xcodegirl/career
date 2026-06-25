@@ -235,7 +235,8 @@ def add_portfolio_section(lines, resume_data):
     for item in resume_data["portfolio"]:
         title = escape_markdown(item['title'])
         url = item['url']
-        lines.append(f"- [{title}]({url})")
+        icon = "🐙" if "github.com" in url else "🌐"
+        lines.append(f"- {icon} [{title}]({url})")
     lines.append("")
 
 
@@ -301,16 +302,15 @@ def main():
     if "linkedin" in contact:
         parts = [p for p in contact['linkedin'].split('/') if p]
         label = parts[-1] if parts else contact['linkedin']
-        contact_lines.append(f"- [linkedin.com/in/{escape_markdown(label)}]({contact['linkedin']})")
+        contact_lines.append(f"- 💼 [linkedin.com/in/{escape_markdown(label)}]({contact['linkedin']})")
     if "github" in contact:
         parts = [p for p in contact['github'].split('/') if p]
         label = parts[-1] if parts else contact['github']
-        contact_lines.append(f"- [{escape_markdown(label)}]({contact['github']})")
+        contact_lines.append(f"- 🐙 [{escape_markdown(label)}]({contact['github']})")
     if "website" in contact:
-        contact_lines.append(f"- [Website]({contact['website']})")
+        contact_lines.append(f"- 🌐 [Website]({contact['website']})")
 
     if contact_lines:
-        lines.append("**Contact:**")
         lines.extend(contact_lines)
         lines.append("")
 
