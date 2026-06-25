@@ -38,6 +38,39 @@ function Find-Command {
 }
 
 
+function Test-FileLocked {
+    # Returns $true if the file exists and cannot be opened exclusively.
+    param([string]$path)
+    if (-not (Test-Path $path)) { return $false }
+    try {
+        $stream = [System.IO.File]::Open(
+            $path,
+            [System.IO.FileMode]::Open,
+            [System.IO.FileAccess]::ReadWrite,
+            [System.IO.FileShare]::None
+        )
+        $stream.Close()
+        return $false
+    } catch {
+        return $true
+    }
+}
+
+
+function Wait-FileUnlocked {
+    # Loops until the file is free or the user skips. Returns $true to proceed, $false to skip.
+    param([string]$path, [string]$label)
+    while (Test-FileLocked $path) {
+        Write-Host ""
+        Write-Host "  $label is open in another application." -ForegroundColor Yellow
+        Write-Host "  Close it, then press Enter to retry -- or type S and Enter to skip." -ForegroundColor Yellow
+        $response = Read-Host "  [Enter / S]"
+        if ($response -match '^[Ss]$') { return $false }
+    }
+    return $true
+}
+
+
 function Get-PythonExecutable {
     # Find Python interpreter: check virtual env, repo venv, then PATH.
     param([string]$repoRoot)
@@ -131,8 +164,12 @@ Write-Host "Generating plain text..." -ForegroundColor Cyan
 if ($LASTEXITCODE -ne 0) { throw 'Plain-text generation failed.' }
 
 Write-Host "Generating PDF (article style)..." -ForegroundColor Cyan
-& $pythonCmd (Join-Path $scriptsDir 'json2pdf.py') $inputPath $outputs.Pdf
-if ($LASTEXITCODE -ne 0) { throw 'PDF generation failed (article style).' }
+if (Wait-FileUnlocked $outputs.Pdf "PDF ($($outputs.Pdf))") {
+    & $pythonCmd (Join-Path $scriptsDir 'json2pdf.py') $inputPath $outputs.Pdf
+    if ($LASTEXITCODE -ne 0) { throw 'PDF generation failed (article style).' }
+} else {
+    Write-Host "  Skipped PDF generation." -ForegroundColor Yellow
+}
 
 Write-Host "Generating Word document..." -ForegroundColor Cyan
 & $pythonCmd (Join-Path $scriptsDir 'json2docx.py') $inputPath $outputs.Docx
