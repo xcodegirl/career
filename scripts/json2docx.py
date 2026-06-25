@@ -128,6 +128,13 @@ def add_education_section(doc, resume_data):
             date_run = date_para.runs[0]
             date_run.font.color.rgb = RGBColor(100, 100, 100)
 
+        if school.get('thesis'):
+            thesis_para = doc.add_paragraph(style='List Bullet 2')
+            thesis_para.paragraph_format.left_indent = Inches(0.5)
+            thesis_para.add_run("Thesis: ").bold = True
+            thesis_run = thesis_para.add_run(school['thesis'])
+            thesis_run.italic = True
+
 
 def add_certifications_section(doc, resume_data):
     """Add certifications section."""
@@ -344,6 +351,8 @@ def build_resume_document(resume_data):
         contact_para = doc.add_paragraph()
         contact_para.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
         contact_items = []
+        if "location" in contact:
+            contact_items.append(contact["location"])
         if "linkedin" in contact:
             contact_items.append(contact["linkedin"].split("/")[-1])
         if "github" in contact:
