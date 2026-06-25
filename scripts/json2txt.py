@@ -305,6 +305,8 @@ def main():
     # Contact Info
     contact = resume_data.get('contact', {})
     contact_lines = []
+    if 'location' in contact:
+        contact_lines.append(f"Location: {escape_text(contact['location'])}")
     if 'email' in contact:
         contact_lines.append(f"Email: {escape_text(contact['email'])}")
     if 'phone' in contact:
