@@ -2,9 +2,10 @@
 Generate Word document resume from JSON source.
 Usage: python json2docx.py input.json [output.docx]
 """
-import json
 import os
 import sys
+
+from resume_builder_common import get_output_path, load_resume_json, build_sections
 
 try:
     from docx import Document
@@ -13,19 +14,6 @@ try:
 except ImportError:
     print("Error: python-docx is required. Install with: pip install python-docx")
     sys.exit(1)
-
-
-def get_output_path(json_path, output_arg):
-    """Determine output file path: use provided arg or derive from input."""
-    if output_arg:
-        return output_arg
-    return os.path.splitext(json_path)[0] + '.docx'
-
-
-def load_resume_json(json_path):
-    """Read and parse resume JSON file."""
-    with open(json_path, encoding='utf-8') as file_handle:
-        return json.load(file_handle)
 
 
 def add_section_header(doc, title):
@@ -316,34 +304,6 @@ SECTION_BUILDERS = {
     'published_games': add_published_games_section,
 }
 
-DEFAULT_SECTION_ORDER = [
-    'summary',
-    'ai_expertise',
-    'experience',
-    'education',
-    'certifications',
-    'awards',
-    'skills',
-    'projects',
-    'volunteer',
-    'publications',
-    'languages',
-    'memberships',
-    'portfolio',
-    'published_games',
-]
-
-
-def build_sections(doc, resume_data):
-    """Build sections in order specified by JSON, respecting filters."""
-    section_order = resume_data.get('section_order', DEFAULT_SECTION_ORDER)
-    section_filter = set(resume_data.get('section_filter', []))
-
-    for section_name in section_order:
-        if section_name not in section_filter and section_name in SECTION_BUILDERS:
-            SECTION_BUILDERS[section_name](doc, resume_data)
-
-
 def build_resume_document(resume_data):
     """Construct Word document from resume data."""
     doc = Document()
@@ -393,7 +353,7 @@ def build_resume_document(resume_data):
         contact_para.paragraph_format.space_after = Pt(12)
 
     # Build sections in order specified by JSON
-    build_sections(doc, resume_data)
+    build_sections(doc, resume_data, SECTION_BUILDERS)
 
     return doc
 
@@ -404,7 +364,7 @@ def main():
         sys.exit(1)
 
     json_path = sys.argv[1]
-    output_path = get_output_path(json_path, sys.argv[2] if len(sys.argv) > 2 else None)
+    output_path = get_output_path(json_path, sys.argv[2] if len(sys.argv) > 2 else None, '.docx')
 
     resume_data = load_resume_json(json_path)
     doc = build_resume_document(resume_data)
