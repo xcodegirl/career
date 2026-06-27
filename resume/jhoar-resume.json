@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "Joanne Hoar",
   "title": "Technology Educator, Software Developer, Game Developer",
   "contact": {
@@ -8,7 +8,7 @@
   "summary": "Canadian Software Developer with 20 years of experience in video game programming, scientific modelling and cross-platform development. Expertise in multiple programming languages, game engines and SDKs. Proven track record in leading teams, mentoring developers, impressing customers and building corporate culture. Strong background in C++, Unreal Engine, iOS and Android using agile methodologies and CI/CD. Passion for algorithmic correctness, mathematics, artificial intelligence and nature.",
   "experience": [
     {
-      "date": "Jan 2025 -- present",
+      "date": "Jan 2025 – present",
       "title": "Technology Instructor",
       "company": "Robertson College (contract)",
       "description": "Instructed 20+ course offerings across Full Stack Development and Data Analytics diploma programs. Delivered live coding sessions, maintained open-source course materials on GitHub, and achieved an average student satisfaction rating of 4.5/5.0.",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "date": "2022 -- 2025",
+      "date": "2022 – 2025",
       "title": "Senior Software Developer",
       "company": "bitHeads Inc.",
       "description": "Developed and maintained cross-platform client SDKs for a backend-as-a-service platform used by 50+ published games across 12 platforms including PlayStation, Xbox, Nintendo Switch, iOS, and Android. Engineered CI/CD and TDD pipelines and managed customer relationships with AAA and Indie studios.",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "date": "2011 -- 2022",
+      "date": "2011 – 2022",
       "title": "Co-founder/ Lead Developer",
       "company": "Silicon Hanna Inc. (self-employed)",
       "description": "Designed, coded and published eleven mobile games for iOS and Android, from concept and game design through to commercial app-store release. Experimented with cutting-edge device technologies including ARKit and other emerging SDKs.",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "date": "2008 -- 2011",
+      "date": "2008 – 2011",
       "title": "Tools Programmer",
       "company": "Fekete Associates Inc. (S&P Global)",
       "description": "Developed tools that used mathematical modelling to maximize production and improve efficiency for major oil & gas corporations. Led research on a new system that reduced build times by 40%.",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "date": "2005 -- 2008",
+      "date": "2005 – 2008",
       "title": "Intermediate Software Engineer",
       "company": "BJ Pipeline Inspection Services Inc. (Baker Hughes)",
       "description": "Visualised in-line device data with OpenGL graphics. Implemented neural network algorithms for anomaly detection. Led development of custom web-based GIS reporting software. Improved low-level programming algorithms for data processing.",
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "date": "2005 -- 2008",
+      "date": "2005 – 2008",
       "title": "Co-founder / App Developer / Instructor",
       "company": "SuRJE Software Solutions Inc. (self-employed, contract)",
       "description": "Created and published physics-based games for iOS. Handled technical writing, web development, Google Maps and Firebase integration and server administration. Developed course curriculum, instructed C++ programming and assessed student work with the Department of Continuing Education.",
@@ -113,7 +113,7 @@
       ]
     },
     {
-      "date": "2005 - 2006",
+      "date": "2005 – 2006",
       "title": "Software Researcher / Lead Developer",
       "company": "PlayStarMusic Corp.",
       "description": "Led development and system administration for an iTunes-like music store. Automated DRM encoding and video streaming. Developed a prototype for a Google-competitive search engine.",
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "date": "2004 - 2005",
+      "date": "2004 – 2005",
       "title": "Junior Software Engineer",
       "company": "Codefast.com",
       "description": "Ported applications to operate under a new GUI library. Developed user interfaces for software lifecycle automation.",
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "date": "2002 -- 2004",
+      "date": "2002 – 2004",
       "title": "Web Developer / VR Artist",
       "company": "Nickle Arts Museum, University of Calgary (contract)",
       "description": "Designed and developed an interactive online catalogue for the Gerald Hushlak art exhibit with JavaScript-based features. Contributed original generative art from graduate research. Collaborated on a pioneering VR installation using 3D scanning and CAVE immersion technology.",
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "date": "2001 - 2004",
+      "date": "2001 – 2004",
       "title": "Research Assistant",
       "company": "VLab Computer Graphics Group / Artificial Intelligence Research Hub",
       "description": "Developed graphics software tools using fractal mathematics and biological modelling. Managed network setup and distributed computing infrastructure. Published five research papers and served as teaching assistant across three courses.",
@@ -175,14 +175,14 @@
   ],
   "education": [
     {
-      "date": "2002 -- 2004",
+      "date": "2002 – 2004",
       "degree": "Master's Degree",
       "institution": "University of Calgary",
       "field": "Computer Science",
       "thesis": "Agent-based Development of Natural Transportation Networks"
     },
     {
-      "date": "1998 -- 2001",
+      "date": "1998 – 2001",
       "degree": "Bachelor's Degree",
       "institution": "University of Calgary",
       "field": "Computer Science"
@@ -263,7 +263,7 @@
       "year": ["2011", "2019"]
     },
     {
-      "title": "Rafter’s Loot",
+      "title": "Rafterâ€™s Loot",
       "platforms": ["iOS"],
       "year": "2011"
     },

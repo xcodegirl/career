@@ -15,7 +15,7 @@ def escape_html(text):
     text = text.replace('"', '&quot;').replace("'", '&#39;')
     text = text.replace(''', "'").replace(''', "'")
     text = text.replace('"', '"').replace('"', '"')
-    text = text.replace('–', '-').replace('—', '--')
+    text = text.replace('–', '&ndash;').replace('—', '&mdash;')
     return text
 
 
@@ -101,9 +101,10 @@ def add_education_section(lines, resume_data):
     for school in resume_data["education"]:
         degree = escape_html(school["degree"])
         institution = escape_html(school["institution"])
-        lines.append(f'<h3>{degree} - {institution}</h3>')
-        lines.append(f'<div><em>{escape_html(school["date"])}</em></div>')
-        lines.append(f'<div>Field: {escape_html(school["field"])}</div>')
+        field = escape_html(school.get("field", ""))
+        field_str = f' <span style="font-weight:normal;">in {field}</span>' if field else ''
+        lines.append(f'<h3>{degree}{field_str}</h3>')
+        lines.append(f'<div><em>{institution}</em> &mdash; {escape_html(school["date"])}</div>')
         if school.get("thesis"):
             lines.append(f'<div>Thesis: <em>{escape_html(school["thesis"])}</em></div>')
     lines.append('</div>')
@@ -135,13 +136,11 @@ def add_awards_section(lines, resume_data):
         return
     lines.append('<div class="section">')
     lines.append('<h2>Awards</h2>')
-    lines.append('<ul>')
     for award in resume_data["awards"]:
         title = escape_html(award['title'])
         org = f", {escape_html(award['organization'])}" if award.get("organization") else ""
         year = f", {escape_html(award['year'])}" if award.get("year") else ""
-        lines.append(f'<li>{title}{org}{year}</li>')
-    lines.append('</ul>')
+        lines.append(f'<div><strong>{title}</strong>{org}{year}</div>')
     lines.append('</div>')
 
 
@@ -209,7 +208,6 @@ def add_publications_section(lines, resume_data):
         return
     lines.append('<div class="section">')
     lines.append('<h2>Publications</h2>')
-    lines.append('<ul>')
     for pub in resume_data["publications"]:
         title = escape_html(pub["title"])
         publication = escape_html(pub.get("publication", ""))
@@ -218,8 +216,7 @@ def add_publications_section(lines, resume_data):
         date_str = f', {date}' if date else ''
         pub_str = f' - {publication}' if publication else ''
         title_html = f'<a href="{escape_html(url)}">{title}</a>' if url else title
-        lines.append(f'<li>{title_html}{pub_str}{date_str}</li>')
-    lines.append('</ul>')
+        lines.append(f'<div>{title_html}{pub_str}{date_str}</div>')
     lines.append('</div>')
 
 
@@ -262,13 +259,11 @@ def add_portfolio_section(lines, resume_data):
         return
     lines.append('<div class="section">')
     lines.append('<h2>Portfolio</h2>')
-    lines.append('<ul>')
     for item in resume_data["portfolio"]:
         title = escape_html(item["title"])
         url = escape_html(item["url"])
         icon_class = "fa-brands fa-github" if "github.com" in item["url"] else "fa-solid fa-globe"
-        lines.append(f'<li><i class="{icon_class} fa-icon"></i><a href="{url}">{title}</a></li>')
-    lines.append('</ul>')
+        lines.append(f'<div><i class="{icon_class} fa-icon"></i><a href="{url}">{title}</a></div>')
     lines.append('</div>')
 
 
@@ -278,13 +273,11 @@ def add_published_games_section(lines, resume_data):
         return
     lines.append('<div class="section">')
     lines.append('<h2>Published Games</h2>')
-    lines.append('<ul>')
     for game in resume_data["published_games"]:
         title = escape_html(game["title"])
         platforms = ', '.join(escape_html(p) for p in game["platforms"])
         year = game["year"] if isinstance(game["year"], str) else ', '.join(escape_html(y) for y in game["year"])
-        lines.append(f'<li><strong>{title}</strong> ({platforms}, {year})</li>')
-    lines.append('</ul>')
+        lines.append(f'<div><strong>{title}</strong> ({platforms}, {year})</div>')
     lines.append('</div>')
 
 
