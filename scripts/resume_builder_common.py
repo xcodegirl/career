@@ -14,7 +14,7 @@ def get_output_path(json_path, output_arg, extension):
 
 def load_resume_json(json_path):
     """Read and parse resume JSON file."""
-    with open(json_path, encoding='utf-8') as file_handle:
+    with open(json_path, encoding='utf-8-sig') as file_handle:
         return json.load(file_handle)
 
 
