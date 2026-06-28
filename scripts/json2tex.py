@@ -29,17 +29,19 @@ def escape_latex(text):
 
 
 def description_lines(job):
-    """Return LaTeX for a job description — handles string or list."""
+    """Return LaTeX lines for a job's description paragraph and/or bullets."""
+    out = []
     desc = job.get('description')
-    if not desc:
-        return []
-    if isinstance(desc, list):
-        out = ['\\begin{itemize}']
-        for item in desc:
+    if desc and isinstance(desc, str):
+        out.append(escape_latex(desc))
+        out.append('')
+    bullets = job.get('bullets')
+    if bullets:
+        out.append('\\begin{itemize}')
+        for item in bullets:
             out.append(f'    \\item {escape_latex(item)}')
         out.append('\\end{itemize}')
-        return out
-    return [escape_latex(desc), '']
+    return out
 
 
 # =====================================================================
@@ -52,6 +54,7 @@ def add_document_setup(lines):
     lines.append('\\usepackage{enumitem}')
     lines.append('\\usepackage[hidelinks]{hyperref}')
     lines.append('\\usepackage{titlesec}')
+    lines.append('\\usepackage{fontawesome5}')
     lines.append('')
     lines.append('\\setlength{\\parindent}{0pt}')
     lines.append('\\setlength{\\parskip}{0pt}')
@@ -75,23 +78,23 @@ def add_header_section(lines, resume_data):
     contact = resume_data.get('contact', {})
     items = []
     if contact.get('email'):
-        items.append(f'\\href{{mailto:{escape_latex(contact["email"])}}}{{{escape_latex(contact["email"])}}}')
+        items.append(f'\\faIcon{{at}}~\\href{{mailto:{escape_latex(contact["email"])}}}{{{escape_latex(contact["email"])}}}')
     if contact.get('phone'):
-        items.append(escape_latex(contact['phone']))
+        items.append(f'\\faIcon{{phone}}~{escape_latex(contact["phone"])}')
     if contact.get('location'):
-        items.append(escape_latex(contact['location']))
+        items.append(f'\\faIcon{{map-marker-alt}}~{escape_latex(contact["location"])}')
     if contact.get('linkedin'):
         url = contact['linkedin']
         parts = [p for p in url.split('/') if p]
         label = parts[-1] if parts else url
-        items.append(f'\\href{{{escape_latex(url)}}}{{linkedin.com/in/{escape_latex(label)}}}')
+        items.append(f'\\faIcon{{linkedin}}~\\href{{{escape_latex(url)}}}{{linkedin.com/in/{escape_latex(label)}}}')
     if contact.get('github'):
         url = contact['github']
         parts = [p for p in url.split('/') if p]
         label = parts[-1] if parts else url
-        items.append(f'\\href{{{escape_latex(url)}}}{{{escape_latex(label)}}}')
+        items.append(f'\\faIcon{{github}}~\\href{{{escape_latex(url)}}}{{{escape_latex(label)}}}')
     if items:
-        lines.append(' $\\cdot$ '.join(items) + '\\\\')
+        lines.append(' \\enspace|\\enspace '.join(items) + '\\\\')
 
     lines.append('\\end{center}')
     lines.append('\\vspace{4pt}')
@@ -243,7 +246,8 @@ def add_portfolio_section(lines, resume_data):
     for item in resume_data['portfolio']:
         title = escape_latex(item.get('title', ''))
         url = item.get('url', '')
-        lines.append(f'\\href{{{escape_latex(url)}}}{{{title}}}\\\\')
+        icon = 'github' if 'github.com' in url else 'globe'
+        lines.append(f'\\faIcon{{{icon}}}~\\href{{{escape_latex(url)}}}{{{title}}}\\\\')
     lines.append('')
 
 
