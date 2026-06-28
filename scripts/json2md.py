@@ -125,7 +125,7 @@ def add_awards_section(lines, resume_data):
         title = escape_markdown(award['title'])
         org = f", {escape_markdown(award['organization'])}" if award.get("organization") else ""
         year = f", {escape_markdown(award['year'])}" if award.get("year") else ""
-        lines.append(f"- {title}{org}{year}")
+        lines.append(f"**{title}**{org}{year}")
     lines.append("")
 
 

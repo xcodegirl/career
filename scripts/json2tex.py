@@ -199,7 +199,7 @@ def add_awards_section(lines, resume_data):
         year = escape_latex(str(award.get('year', '')))
         org_str = f', {org}' if org else ''
         year_str = f' \\hfill {year}' if year else ''
-        lines.append(f'    \\item {title}{org_str}{year_str}')
+        lines.append(f'    \\item \\textbf{{{title}}}{org_str}{year_str}')
     lines.append('\\end{itemize}')
     lines.append('')
 
