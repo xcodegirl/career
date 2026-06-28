@@ -151,7 +151,7 @@ def add_experience_section(lines, resume_data):
         lines.append(f'\\textbf{{{title}}}, \\textit{{{company}}} \\hfill {date}')
         if job.get('technologies'):
             tech_str = ', '.join(escape_latex(t) for t in job['technologies'])
-            lines.append(f'\\\\\\textit{{\\small {tech_str}}}')
+            lines.append(f'\\\\\\texttt{{\\small {tech_str}}}')
         lines.append('\\\\[-2pt]')
         lines.extend(description_lines(job))
         lines.append('')
@@ -235,7 +235,7 @@ def add_projects_section(lines, resume_data):
             lines.append(f'{description}\\\\')
         if technologies:
             tech_str = ', '.join(escape_latex(t) for t in technologies)
-            lines.append(f'\\textit{{\\small {tech_str}}}\\\\')
+            lines.append(f'\\texttt{{\\small {tech_str}}}\\\\')
         lines.append('')
 
 
